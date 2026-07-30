@@ -64,6 +64,10 @@ test("server-renders the public concert skeleton", async () => {
   assert.match(html, /OFFICIAL HIGE DANDISM/);
   assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=TQ8WlA2GXbk/);
   assert.doesNotMatch(html, /Official髭男dism/);
+  assert.match(html, /노래는 불빛처럼 달린다/);
+  assert.match(html, /유다빈밴드/);
+  assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=NMrQlOg5Ouc/);
+  assert.doesNotMatch(html, /2pAtQgjvsJ0|버전 확인 중/);
   assert.match(html, /Time Is Running Out/);
   assert.match(html, /5,000원/);
   assert.match(html, /사전 예매/);
