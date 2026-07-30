@@ -57,6 +57,13 @@ export const bands = [
   },
 ];
 
+export const encore = {
+  isPublic: false,
+  label: "ENCORE",
+  band: "NEW RIVER × 24 Hz",
+  description: "합동 앙코르곡 · 추후 공개",
+};
+
 export const setlists: SetlistGroup[] = [
   {
     id: "24hz-set-1",
