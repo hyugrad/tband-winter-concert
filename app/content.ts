@@ -134,9 +134,8 @@ export const setlists: SetlistGroup[] = [
       },
       {
         title: "노래는 불빛처럼 달린다",
-        artist: "페퍼톤스",
-        youtube: "https://www.youtube.com/watch?v=2pAtQgjvsJ0",
-        note: "버전 확인 중",
+        artist: "유다빈밴드",
+        youtube: "https://www.youtube.com/watch?v=NMrQlOg5Ouc",
       },
     ],
   },
