@@ -58,10 +58,7 @@ test("server-renders the public concert skeleton", async () => {
   assert.doesNotMatch(html, /class="setlist-shell" open/);
   assert.match(html, /전체 셋리스트/);
   assert.match(html, /눌러서 보기/);
-  assert.match(
-    html,
-    /class="setlist-content"[\s\S]*class="encore-card"[\s\S]*<\/details>/,
-  );
+  assert.doesNotMatch(html, /class="encore-card"|합동 앙코르곡|>ENCORE</);
   assert.doesNotMatch(html, /19:00 시작 · 가안|본공연 시작 · 가안/);
   assert.match(html, /사랑하게 될 거야/);
   assert.match(html, /OFFICIAL HIGE DANDISM/);

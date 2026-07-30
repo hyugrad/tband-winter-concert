@@ -1,5 +1,5 @@
 /* eslint-disable @next/next/no-img-element -- Static export serves the original band logos without a runtime image optimizer. */
-import { bands, event, setlists } from "./content";
+import { bands, encore, event, setlists } from "./content";
 import { ScrollExperience } from "./scroll-experience";
 
 const heroInstruments = [
@@ -239,13 +239,15 @@ export default function Home() {
                   </section>
                 ))}
 
-                <div className="encore-card">
-                  <span>ENCORE</span>
-                  <div>
-                    <strong>NEW RIVER × 24 Hz</strong>
-                    <p>합동 앙코르곡 · 추후 공개</p>
+                {encore.isPublic && (
+                  <div className="encore-card">
+                    <span>{encore.label}</span>
+                    <div>
+                      <strong>{encore.band}</strong>
+                      <p>{encore.description}</p>
+                    </div>
                   </div>
-                </div>
+                )}
               </div>
             </details>
           </div>
