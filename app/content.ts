@@ -164,6 +164,11 @@ export const setlists: SetlistGroup[] = [
         artist: "Muse",
         youtube: "https://www.youtube.com/watch?v=O2IuJPh6h_A",
       },
+      {
+        title: "21세기의 어떤 날",
+        artist: "LUCY",
+        youtube: "https://www.youtube.com/watch?v=Rg42mGBDzzQ",
+      },
     ],
   },
 ];
