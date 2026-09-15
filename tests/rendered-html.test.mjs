@@ -69,6 +69,9 @@ test("server-renders the public concert skeleton", async () => {
   assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=NMrQlOg5Ouc/);
   assert.doesNotMatch(html, /2pAtQgjvsJ0|버전 확인 중/);
   assert.match(html, /Time Is Running Out/);
+  assert.match(html, /21세기의 어떤 날/);
+  assert.match(html, /LUCY/);
+  assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=Rg42mGBDzzQ/);
   assert.match(html, /5,000원/);
   assert.match(html, /사전 예매/);
   assert.match(html, /현장 결제/);
