@@ -38,6 +38,7 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /fnl-curtain-left/);
   assert.match(html, /data-text="FRIDAY"/);
   assert.match(html, /fnl-admit-ticket/);
+  assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);
   assert.match(html, /DEC 11 · 001 CLUB/);
   assert.match(html, /두 밴드가 만드는/);
   assert.match(html, /NEW RIVER와 24 Hz가 함께 만드는 겨울 합동공연입니다/);

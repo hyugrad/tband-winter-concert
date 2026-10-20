@@ -307,11 +307,10 @@ export default function Home() {
 
               <div className="fnl-admit-ticket" aria-label="FNL 공연 티켓">
                 <div className="fnl-admit-main">
-                  <span className="fnl-admit-overline">FRIDAY NIGHT PRESENTS</span>
+                  <span className="fnl-admit-overline">FRIDAY NIGHT LIVE · 2026</span>
                   <strong className="fnl-admit-title">
-                    <span>FRIDAY</span>
-                    <span>NIGHT</span>
-                    <span>LIVE</span>
+                    <span>FNL</span>
+                    <span>TICKET</span>
                   </strong>
                   <dl>
                     <div>
