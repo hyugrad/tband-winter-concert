@@ -1,6 +1,7 @@
 import type { Metadata } from "next";
 import { Geist, Geist_Mono } from "next/font/google";
 import "./globals.css";
+import "./fnl.css";
 
 const geistSans = Geist({
   variable: "--font-geist-sans",
@@ -17,22 +18,22 @@ const siteUrl =
   process.env.NEXT_PUBLIC_SITE_URL ??
   "https://hyugrad.github.io/tband-winter-concert/";
 const siteDescription =
-  "2026년 12월 11일, 합정 001클럽에서 열리는 NEW RIVER와 24 Hz의 합동공연.";
+  "FNL — 2026년 12월 11일, 합정 001클럽에서 열리는 NEW RIVER와 24 Hz의 Friday Night Live.";
 
 export const metadata: Metadata = {
   metadataBase: new URL(siteUrl),
   title: {
-    default: "2026 NEW RIVER X 24 Hz 합동공연",
-    template: "%s | NEW RIVER X 24 Hz",
+    default: "FNL — Friday Night Live",
+    template: "%s | FNL",
   },
   description: siteDescription,
-  applicationName: "NEW RIVER X 24 Hz",
-  keywords: ["NEW RIVER", "24Hz", "합동공연", "001클럽", "인디밴드"],
+  applicationName: "FNL — Friday Night Live",
+  keywords: ["FNL", "Friday Night Live", "NEW RIVER", "24Hz", "합동공연", "001클럽", "인디밴드"],
   openGraph: {
-    title: "2026 NEW RIVER X 24 Hz 합동공연",
+    title: "FNL — Friday Night Live",
     description: siteDescription,
     url: siteUrl,
-    siteName: "NEW RIVER X 24 Hz",
+    siteName: "FNL — Friday Night Live",
     type: "website",
     locale: "ko_KR",
     images: [
@@ -40,13 +41,13 @@ export const metadata: Metadata = {
         url: "og.png",
         width: 1200,
         height: 630,
-        alt: "NEW RIVER와 24 Hz 합동공연 안내",
+        alt: "FNL Friday Night Live 공연 안내",
       },
     ],
   },
   twitter: {
     card: "summary_large_image",
-    title: "2026 NEW RIVER X 24 Hz 합동공연",
+    title: "FNL — Friday Night Live",
     description: siteDescription,
     images: ["og.png"],
   },

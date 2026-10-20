@@ -4,17 +4,25 @@ import { useEffect, useRef } from "react";
 
 const sectionIds = ["top", "about", "bands", "setlist", "ticket", "venue", "guide"];
 
-export function ScrollExperience() {
+type ScrollExperienceProps = {
+  heroSelector?: string;
+  navSelector?: string;
+};
+
+export function ScrollExperience({
+  heroSelector = ".hero",
+  navSelector = ".site-nav",
+}: ScrollExperienceProps = {}) {
   const progressRef = useRef<HTMLDivElement>(null);
 
   useEffect(() => {
     const root = document.documentElement;
     const progress = progressRef.current;
-    const hero = document.querySelector<HTMLElement>(".hero");
+    const hero = document.querySelector<HTMLElement>(heroSelector);
     const finePointer = window.matchMedia("(hover: hover) and (pointer: fine)");
     const reducedMotion = window.matchMedia("(prefers-reduced-motion: reduce)");
     const navLinks = Array.from(
-      document.querySelectorAll<HTMLAnchorElement>(".site-nav a[href^='#']"),
+      document.querySelectorAll<HTMLAnchorElement>(`${navSelector} a[href^='#']`),
     );
     let frame = 0;
     let pointerX = 0;
@@ -114,7 +122,7 @@ export function ScrollExperience() {
       hero?.style.removeProperty("--hero-field-y");
       if (frame) window.cancelAnimationFrame(frame);
     };
-  }, []);
+  }, [heroSelector, navSelector]);
 
   return (
     <div className="scroll-progress" ref={progressRef} aria-hidden="true">
