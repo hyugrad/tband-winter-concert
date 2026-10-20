@@ -242,15 +242,16 @@
   display: block;
   width: fit-content;
   padding-right: 0.05em;
-  background: linear-gradient(180deg, #8e161e 0%, #5f0910 55%, #2b0508 100%);
+  background: linear-gradient(180deg, #df2635 0%, #a6111d 52%, #650912 100%);
   background-clip: text;
   color: transparent;
   -webkit-background-clip: text;
-  -webkit-text-stroke: 1px rgba(240, 190, 104, 0.92);
+  -webkit-text-stroke: 1.5px #f0c675;
   text-shadow:
-    0 3px 0 #351014,
-    0 8px 18px rgba(0, 0, 0, 0.82),
-    0 0 28px rgba(193, 18, 31, 0.22);
+    0 3px 0 #501018,
+    0 8px 18px rgba(0, 0, 0, 0.72),
+    0 0 12px rgba(255, 218, 139, 0.74),
+    0 0 42px rgba(219, 36, 50, 0.66);
 }
 
 .fnl-marquee > h1 > span::after {
@@ -258,14 +259,19 @@
   inset: 0;
   padding-right: 0.05em;
   background:
-    radial-gradient(circle, #fffdf0 0 1.7px, #f0bc63 1.9px 3px, transparent 3.3px) 0 0 / 13px 13px;
+    radial-gradient(circle, #fff 0 2px, #ffe6a4 2.2px 3.5px, transparent 3.8px) 0 0 / 12px 12px;
   background-clip: text;
   color: transparent;
   content: attr(data-text);
-  filter: drop-shadow(0 0 3px rgba(255, 220, 147, 0.9));
+  filter:
+    brightness(1.16)
+    drop-shadow(0 0 4px #fff2bd)
+    drop-shadow(0 0 10px rgba(255, 192, 82, 0.95));
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
-  animation: fnl-bulb-warmup 1.1s var(--fnl-delay, 0.82s) both ease-out;
+  animation:
+    fnl-bulb-warmup 1.1s var(--fnl-delay, 0.82s) both ease-out,
+    fnl-bulb-breathe 2.6s 2.1s infinite alternate ease-in-out;
 }
 
 .fnl-marquee > h1 > span:nth-child(2) { --fnl-delay: 0.92s; }
@@ -752,60 +758,60 @@
 .fnl-admit-ticket {
   position: relative;
   display: grid;
-  width: min(94%, 560px);
-  min-height: 190px;
-  margin: -8px 6px 0 auto;
-  transform: rotate(-1.8deg);
-  grid-template-columns: minmax(0, 1fr) 104px;
+  width: min(72%, 390px);
+  min-height: 138px;
+  margin: -14px 6px 0 auto;
+  transform: rotate(-2.2deg);
+  grid-template-columns: minmax(0, 1fr) 78px;
   overflow: hidden;
-  border: 4px solid #35060b;
-  border-radius: 7px;
+  border: 3px solid #35060b;
+  border-radius: 6px;
   background:
     radial-gradient(circle at 2px 2px, rgba(71, 7, 13, 0.1) 0 1px, transparent 1.2px) 0 0 / 6px 6px,
     var(--fnl-paper);
   color: #3a080d;
-  box-shadow: 12px 16px 32px rgba(4, 0, 0, 0.34);
+  box-shadow: 9px 12px 24px rgba(4, 0, 0, 0.34);
 }
 
 .fnl-admit-ticket::before,
 .fnl-admit-ticket::after {
   position: absolute;
   z-index: 2;
-  right: 92px;
-  width: 22px;
-  height: 22px;
+  right: 68px;
+  width: 18px;
+  height: 18px;
   border-radius: 50%;
   background: var(--fnl-red-dark);
   content: "";
 }
 
-.fnl-admit-ticket::before { top: -14px; }
-.fnl-admit-ticket::after { bottom: -14px; }
+.fnl-admit-ticket::before { top: -11px; }
+.fnl-admit-ticket::after { bottom: -11px; }
 
-.fnl-admit-main { padding: 20px 24px 18px; }
+.fnl-admit-main { padding: 13px 16px 12px; }
 
 .fnl-admit-overline {
   display: block;
-  padding-bottom: 8px;
+  padding-bottom: 5px;
   border-bottom: 1px solid rgba(58, 8, 13, 0.38);
   font-family: var(--font-geist-mono), monospace;
-  font-size: 7px;
+  font-size: 6px;
   font-weight: 800;
   letter-spacing: 0.22em;
 }
 
 .fnl-admit-title {
   display: flex;
-  margin: 12px 0 14px;
+  margin: 7px 0 9px;
   flex-direction: column;
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
-  font-size: clamp(2rem, 4.5vw, 3.4rem);
+  font-size: clamp(1.7rem, 3.4vw, 2.4rem);
   font-weight: 950;
   letter-spacing: -0.055em;
-  line-height: 0.74;
+  line-height: 0.76;
 }
 
-.fnl-admit-title span:nth-child(2) { color: var(--fnl-red); }
+.fnl-admit-title span:first-child { color: var(--fnl-red); }
 
 .fnl-admit-main dl {
   display: grid;
@@ -814,10 +820,10 @@
   border-top: 1px solid rgba(58, 8, 13, 0.38);
 }
 
-.fnl-admit-main dl div { min-width: 0; padding-top: 9px; }
-.fnl-admit-main dl div + div { border-left: 1px solid rgba(58, 8, 13, 0.24); padding-left: 10px; }
+.fnl-admit-main dl div { min-width: 0; padding-top: 6px; }
+.fnl-admit-main dl div + div { border-left: 1px solid rgba(58, 8, 13, 0.24); padding-left: 7px; }
 .fnl-admit-main dt { font-family: var(--font-geist-mono), monospace; font-size: 6px; font-weight: 800; letter-spacing: 0.16em; }
-.fnl-admit-main dd { margin: 4px 0 0; overflow: hidden; font-size: 11px; font-weight: 850; text-overflow: ellipsis; white-space: nowrap; }
+.fnl-admit-main dd { margin: 3px 0 0; overflow: hidden; font-size: 9px; font-weight: 850; text-overflow: ellipsis; white-space: nowrap; }
 
 .fnl-admit-stub {
   display: flex;
@@ -830,9 +836,9 @@
   text-align: center;
 }
 
-.fnl-admit-stub > span { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 900; letter-spacing: 0.18em; line-height: 1.3; }
-.fnl-admit-stub > strong { margin-top: 12px; font-size: 24px; letter-spacing: 0.05em; }
-.fnl-admit-stub > small { margin-top: 18px; font-size: 10px; font-weight: 800; white-space: nowrap; }
+.fnl-admit-stub > span { font-family: var(--font-geist-mono), monospace; font-size: 7px; font-weight: 900; letter-spacing: 0.15em; line-height: 1.3; }
+.fnl-admit-stub > strong { margin-top: 8px; font-size: 18px; letter-spacing: 0.05em; }
+.fnl-admit-stub > small { margin-top: 12px; font-size: 8px; font-weight: 800; white-space: nowrap; }
 
 .fnl-venue {
   background:
@@ -909,6 +915,11 @@
   72%, 100% { opacity: 1; }
 }
 
+@keyframes fnl-bulb-breathe {
+  from { filter: brightness(1.08) drop-shadow(0 0 4px #fff2bd) drop-shadow(0 0 9px rgba(255, 192, 82, 0.88)); }
+  to { filter: brightness(1.3) drop-shadow(0 0 6px #fff8d8) drop-shadow(0 0 15px rgba(255, 192, 82, 1)); }
+}
+
 @media (max-width: 760px) {
   .fnl-header { min-height: 58px; padding: 6px 12px; }
   .fnl-wordmark { min-height: 44px; gap: 5px; }
@@ -921,7 +932,7 @@
   .fnl-stage-image { object-position: center center; }
   .fnl-marquee { width: min(94vw, 520px); padding: 8px 10px 11px; }
   .fnl-marquee > h1 { font-size: clamp(4.1rem, 20.5vw, 6rem); line-height: 0.75; }
-  .fnl-marquee > h1 > span::after { background-size: 9px 9px; }
+  .fnl-marquee > h1 > span::after { background-size: 10px 10px; }
   .fnl-marquee-kicker, .fnl-marquee-caption { letter-spacing: 0.3em; }
   .fnl-hero-cast { margin-top: 20px; }
   .fnl-hero-meta { max-width: 320px; }
@@ -955,7 +966,7 @@
   .fnl-setlist-group li a::after { font-size: 13px; content: "↗"; }
   .fnl-ticket-grid { gap: 38px; }
   .fnl-ticket-intro > strong { margin-top: 24px; }
-  .fnl-admit-ticket { width: min(96%, 540px); margin-top: -4px; }
+  .fnl-admit-ticket { width: min(86%, 320px); margin-top: -10px; }
   .fnl-venue-grid { gap: 42px; }
   .fnl-footer { grid-template-columns: 52px 1fr; padding: 32px 18px; }
   .fnl-footer > img { width: 50px; height: 42px; }
@@ -969,14 +980,14 @@
   .fnl-date-lockup { grid-template-columns: 1fr; }
   .fnl-date-lockup div + div { border-top: 1px solid rgba(21, 17, 18, 0.24); border-left: 0; padding-left: 0; }
   .fnl-ticket-stub > div { padding: 23px 20px; }
-  .fnl-admit-ticket { min-height: 166px; grid-template-columns: minmax(0, 1fr) 82px; }
-  .fnl-admit-ticket::before, .fnl-admit-ticket::after { right: 70px; }
-  .fnl-admit-main { padding: 17px 16px 15px; }
-  .fnl-admit-title { font-size: clamp(1.8rem, 10vw, 2.7rem); }
+  .fnl-admit-ticket { min-height: 126px; grid-template-columns: minmax(0, 1fr) 64px; }
+  .fnl-admit-ticket::before, .fnl-admit-ticket::after { right: 55px; }
+  .fnl-admit-main { padding: 12px 12px 11px; }
+  .fnl-admit-title { font-size: clamp(1.5rem, 8vw, 2rem); }
   .fnl-admit-main dl { grid-template-columns: 0.72fr 0.62fr 1fr; }
-  .fnl-admit-main dd { font-size: 9px; }
-  .fnl-admit-stub > strong { font-size: 20px; }
-  .fnl-admit-stub > small { font-size: 8px; }
+  .fnl-admit-main dd { font-size: 7px; }
+  .fnl-admit-stub > strong { font-size: 16px; }
+  .fnl-admit-stub > small { font-size: 7px; }
 }
 
 @media (prefers-reduced-motion: reduce) {
