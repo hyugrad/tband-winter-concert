@@ -74,15 +74,13 @@ export default function Home() {
           <div className="fnl-hero-content">
             <p className="fnl-broadcast-label">ONE NIGHT ONLY · 2026</p>
             <div className="fnl-marquee">
-              <span className="fnl-bulbs" aria-hidden="true" />
-              <img
-                src={`${basePath}/assets/fnl/logo-red.webp`}
-                alt="FNL"
-                width="1100"
-                height="1000"
-                className="fnl-hero-logo"
-              />
-              <h1 id="fnl-hero-title">FRIDAY NIGHT LIVE</h1>
+              <span className="fnl-marquee-kicker">PRESENTS</span>
+              <h1 id="fnl-hero-title" aria-label="Friday Night Live">
+                <span data-text="FRIDAY">FRIDAY</span>
+                <span data-text="NIGHT">NIGHT</span>
+                <span data-text="LIVE">LIVE</span>
+              </h1>
+              <span className="fnl-marquee-caption">LIVE MUSIC · SEOUL</span>
             </div>
 
             <p className="fnl-hero-cast">NEW RIVER <i>×</i> 24 Hz</p>
@@ -136,19 +134,34 @@ export default function Home() {
                 </div>
               </dl>
             </div>
-            <figure className="fnl-poster-frame">
-              <img
-                src={`${basePath}/assets/fnl/city-night.webp`}
-                alt="도시의 밤을 배경으로 한 Friday Night Live 포스터"
-                width="813"
-                height="1100"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>SEOUL · HAPJEONG · LIVE</figcaption>
-            </figure>
           </div>
         </section>
+
+        <figure className="fnl-city-break">
+          <img
+            className="fnl-city-backdrop"
+            src={`${basePath}/assets/fnl/city-night.webp`}
+            alt=""
+            width="813"
+            height="1100"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <img
+            className="fnl-city-poster"
+            src={`${basePath}/assets/fnl/city-night.webp`}
+            alt="도시 야경을 배경으로 한 Friday Night Live 포스터"
+            width="813"
+            height="1100"
+            loading="lazy"
+            decoding="async"
+          />
+          <figcaption>
+            <span>SEOUL · HAPJEONG</span>
+            <strong>DEC 11 · 001 CLUB</strong>
+          </figcaption>
+        </figure>
 
         <section className="fnl-section fnl-bands" id="bands">
           <div className="fnl-section-label fnl-section-label-light">
@@ -276,18 +289,50 @@ export default function Home() {
               <strong>{event.ticketPrice}</strong>
               <span>1인 관람료</span>
             </div>
-            <div className="fnl-ticket-stub">
-              <div>
-                <span>BOOKING</span>
-                <strong>{event.ticketMethods.join(" · ")}</strong>
-                <p>사전 예매 방법과 현장 결제 수단은 확정되는 대로 안내합니다.</p>
-                <small>{event.reservationStatus}</small>
+            <div className="fnl-ticket-column">
+              <div className="fnl-ticket-stub">
+                <div>
+                  <span>BOOKING</span>
+                  <strong>{event.ticketMethods.join(" · ")}</strong>
+                  <p>사전 예매 방법과 현장 결제 수단은 확정되는 대로 안내합니다.</p>
+                  <small>{event.reservationStatus}</small>
+                </div>
+                <div>
+                  <span>CONTACT</span>
+                  <strong>{event.inquiryChannel}</strong>
+                  <p>공연과 관람에 관한 문의 채널입니다. 계정 링크는 추후 연결됩니다.</p>
+                  <small>{event.inquiryStatus}</small>
+                </div>
               </div>
-              <div>
-                <span>CONTACT</span>
-                <strong>{event.inquiryChannel}</strong>
-                <p>공연과 관람에 관한 문의 채널입니다. 계정 링크는 추후 연결됩니다.</p>
-                <small>{event.inquiryStatus}</small>
+
+              <div className="fnl-admit-ticket" aria-label="FNL 공연 티켓">
+                <div className="fnl-admit-main">
+                  <span className="fnl-admit-overline">FRIDAY NIGHT PRESENTS</span>
+                  <strong className="fnl-admit-title">
+                    <span>FRIDAY</span>
+                    <span>NIGHT</span>
+                    <span>LIVE</span>
+                  </strong>
+                  <dl>
+                    <div>
+                      <dt>DATE</dt>
+                      <dd>DEC 11</dd>
+                    </div>
+                    <div>
+                      <dt>SHOW</dt>
+                      <dd>{event.start}</dd>
+                    </div>
+                    <div>
+                      <dt>VENUE</dt>
+                      <dd>001 CLUB</dd>
+                    </div>
+                  </dl>
+                </div>
+                <div className="fnl-admit-stub">
+                  <span>ADMIT<br />ONE</span>
+                  <strong>1211</strong>
+                  <small>{event.ticketPrice}</small>
+                </div>
               </div>
             </div>
           </div>
