@@ -38,6 +38,10 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /fnl-curtain-left/);
   assert.match(html, /data-text="FRIDAY"/);
   assert.equal((html.match(/class="fnl-title-divider"/g) ?? []).length, 2);
+  assert.doesNotMatch(html, /ONE NIGHT ONLY · 2026|>PRESENTS<|LIVE MUSIC · SEOUL/);
+  assert.match(html, /class="fnl-schedule-board"/);
+  assert.match(html, /LIVE 시작까지/);
+  assert.match(html, /fnl-2026\.ics/);
   assert.match(html, /fnl-admit-ticket/);
   assert.equal((html.match(/class="fnl-program-sheet(?: fnl-faq-sheet)?"/g) ?? []).length, 2);
   assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);
@@ -56,10 +60,11 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /공연 시간·셋리스트/);
   assert.match(html, /모바일 빠른 메뉴/);
   assert.match(html, /001클럽 길찾기 ↗/);
-  assert.match(html, /TONIGHT&#x27;S STUDIO/);
+  assert.match(html, /PLACE &amp; ACCESS/);
+  assert.match(html, /장소 안내/);
   assert.match(html, /001클럽/);
-  assert.match(html, /공연 시간 &amp; 셋리스트/);
-  assert.match(html, /팀별 시작 시간과 곡 순서는 추후/);
+  assert.match(html, /공연 셋리스트/);
+  assert.match(html, /연주 순서는 공연 준비 상황에 따라 변경될 수 있습니다/);
   assert.match(html, /<details class="fnl-setlist">/);
   assert.doesNotMatch(html, /class="fnl-setlist" open/);
   assert.match(html, /전체 셋리스트/);
@@ -85,8 +90,9 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /현장 결제/);
   assert.match(html, /Instagram DM/);
   assert.match(html, /주차할 수 있나요\?/);
-  assert.match(html, /네이버 지도로 길찾기 ↗/);
-  assert.match(html, /카카오맵으로 길찾기 ↗/);
+  assert.match(html, /네이버 길찾기/);
+  assert.match(html, />카카오맵</);
+  assert.match(html, /장소 안내 보기/);
   assert.match(html, /주소 복사/);
 });
 

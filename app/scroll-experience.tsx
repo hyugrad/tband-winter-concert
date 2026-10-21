@@ -2,7 +2,16 @@
 
 import { useEffect, useRef } from "react";
 
-const sectionIds = ["top", "about", "bands", "setlist", "ticket", "venue", "guide"];
+const sectionIds = [
+  "top",
+  "about",
+  "bands",
+  "schedule",
+  "setlist",
+  "ticket",
+  "venue",
+  "guide",
+];
 
 type ScrollExperienceProps = {
   heroSelector?: string;

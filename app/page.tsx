@@ -1,5 +1,6 @@
 /* eslint-disable @next/next/no-img-element -- Static export serves supplied artwork without runtime optimization. */
 import { bands, encore, event, setlists } from "./content";
+import { EventCountdown } from "./event-countdown";
 import { ScrollExperience } from "./scroll-experience";
 import { VenueActions } from "./venue-actions";
 
@@ -51,6 +52,7 @@ export default function Home() {
         <nav className="fnl-nav" aria-label="주요 메뉴">
           <a href="#about">공연</a>
           <a href="#bands">출연</a>
+          <a href="#schedule">일정</a>
           <a href="#setlist">셋리스트</a>
           <a href="#ticket">관람</a>
           <a href="#venue">장소</a>
@@ -79,17 +81,14 @@ export default function Home() {
           <div className="fnl-stage-shade" aria-hidden="true" />
 
           <div className="fnl-hero-content">
-            <p className="fnl-broadcast-label">ONE NIGHT ONLY · 2026</p>
             <div className="fnl-marquee">
-              <span className="fnl-marquee-kicker">PRESENTS</span>
               <h1 id="fnl-hero-title" aria-label="Friday Night Live">
-                <span data-text="FRIDAY">FRIDAY</span>
+                <span data-text="FRIDAY" aria-hidden="true">FRIDAY</span>
                 <i className="fnl-title-divider" aria-hidden="true" />
-                <span data-text="NIGHT">NIGHT</span>
+                <span data-text="NIGHT" aria-hidden="true">NIGHT</span>
                 <i className="fnl-title-divider" aria-hidden="true" />
-                <span data-text="LIVE">LIVE</span>
+                <span data-text="LIVE" aria-hidden="true">LIVE</span>
               </h1>
-              <span className="fnl-marquee-caption">LIVE MUSIC · SEOUL</span>
             </div>
 
             <p className="fnl-hero-cast">NEW RIVER <i>×</i> 24 Hz</p>
@@ -109,7 +108,7 @@ export default function Home() {
 
             <div className="fnl-hero-actions">
               <a href="#ticket">관람 안내</a>
-              <a href="#setlist">공연 시간·셋리스트</a>
+              <a href="#schedule">공연 시간·셋리스트</a>
             </div>
           </div>
 
@@ -131,6 +130,14 @@ export default function Home() {
             <p>OPENING MONOLOGUE</p>
           </div>
           <div className="fnl-about-grid">
+            <img
+              className="fnl-about-mark"
+              src={`${basePath}/assets/fnl/logo-white.webp`}
+              alt=""
+              width="1100"
+              height="1000"
+              loading="lazy"
+            />
             <div className="fnl-about-copy">
               <h2>Friday Night Live</h2>
               <p>
@@ -188,33 +195,47 @@ export default function Home() {
           </div>
         </section>
 
+        <section className="fnl-section fnl-schedule" id="schedule">
+          <div className="fnl-section-label fnl-section-label-light">
+            <span>03</span>
+            <p>LIVE COUNTDOWN</p>
+          </div>
+          <div className="fnl-schedule-board">
+            <div className="fnl-schedule-clock">
+              <p>LIVE 시작까지</p>
+              <EventCountdown target="2026-12-11T19:00:00+09:00" />
+            </div>
+            <div className="fnl-schedule-date">
+              <time dateTime="2026-12-11">
+                <span>DEC</span>
+                <strong>11</strong>
+                <em>FRI</em>
+              </time>
+              <dl>
+                <div><dt>DOORS</dt><dd>{event.doors}</dd></div>
+                <div><dt>LIVE</dt><dd>{event.start}</dd></div>
+                <div><dt>END</dt><dd>{event.expectedEnd}</dd></div>
+                <div><dt>VENUE</dt><dd>{event.venue}</dd></div>
+              </dl>
+              <a href={`${basePath}/fnl-2026.ics`} download>
+                <span aria-hidden="true">＋</span>
+                캘린더에 추가
+              </a>
+            </div>
+          </div>
+        </section>
+
         <section className="fnl-section fnl-rundown" id="setlist">
           <div className="fnl-program-sheet">
           <div className="fnl-section-label">
-            <span>03</span>
+            <span>04</span>
             <p>SHOW RUNDOWN</p>
           </div>
           <div className="fnl-section-heading fnl-section-heading-dark">
-            <h2>공연 시간 &amp; 셋리스트</h2>
+            <h2>공연 셋리스트</h2>
             <span>
-              공연은 19:00에 시작합니다. 팀별 시작 시간과 곡 순서는 추후
-              공개되거나 변경될 수 있습니다.
+              연주 순서는 공연 준비 상황에 따라 변경될 수 있습니다.
             </span>
-          </div>
-
-          <div className="fnl-timeline" aria-label="공연 시간표">
-            <div>
-              <time dateTime="2026-12-11T18:30:00+09:00">{event.doors}</time>
-              <span>DOORS OPEN</span>
-            </div>
-            <div className="fnl-timeline-live">
-              <time dateTime="2026-12-11T19:00:00+09:00">{event.start}</time>
-              <span>LIVE START</span>
-            </div>
-            <div>
-              <time dateTime="2026-12-11T21:30:00+09:00">{event.expectedEnd}</time>
-              <span>EXPECTED END</span>
-            </div>
           </div>
 
           <details className="fnl-setlist">
@@ -273,7 +294,7 @@ export default function Home() {
 
         <section className="fnl-section fnl-ticket" id="ticket">
           <div className="fnl-section-label fnl-section-label-light">
-            <span>04</span>
+            <span>05</span>
             <p>BOX OFFICE</p>
           </div>
           <div className="fnl-ticket-grid">
@@ -332,13 +353,14 @@ export default function Home() {
 
         <section className="fnl-section fnl-venue" id="venue">
           <div className="fnl-section-label fnl-section-label-light">
-            <span>05</span>
-            <p>TONIGHT&apos;S STUDIO</p>
+            <span>06</span>
+            <p>PLACE &amp; ACCESS</p>
           </div>
           <div className="fnl-venue-grid">
             <div className="fnl-venue-title">
-              <p>{event.dateLabel}</p>
-              <h2>{event.venue}</h2>
+              <p>공연장</p>
+              <h2>장소 안내</h2>
+              <strong className="fnl-venue-name">{event.venue}</strong>
               <address>{event.address}</address>
               <VenueActions
                 address={event.address}
@@ -358,7 +380,7 @@ export default function Home() {
         <section className="fnl-section fnl-guide" id="guide">
           <div className="fnl-program-sheet fnl-faq-sheet">
           <div className="fnl-section-label">
-            <span>06</span>
+            <span>07</span>
             <p>HOUSE RULES</p>
           </div>
           <div className="fnl-section-heading fnl-section-heading-dark">
