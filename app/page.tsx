@@ -87,16 +87,22 @@ export default function Home() {
 
             <p className="fnl-hero-cast">NEW RIVER <i>×</i> 24 Hz</p>
             <div className="fnl-hero-meta" aria-label="공연 주요 정보">
-              <time dateTime="2026-12-11">DEC 11 · FRI</time>
-              <span aria-hidden="true">/</span>
-              <strong>{event.start}</strong>
-              <span aria-hidden="true">/</span>
-              <strong>{event.venue}</strong>
+              <p>
+                <time dateTime="2026-12-11">2026.12.11 FRI</time>
+                <span aria-hidden="true">·</span>
+                <strong>{event.start}</strong>
+              </p>
+              <p>
+                <strong>{`합정 ${event.venue}`}</strong>
+                <span aria-hidden="true">·</span>
+                <strong>{event.ticketPrice}</strong>
+              </p>
+              <small>{`${event.doors} 입장`}</small>
             </div>
 
             <div className="fnl-hero-actions">
-              <a href="#setlist">SHOW RUNDOWN</a>
               <a href="#ticket">관람 안내</a>
+              <a href="#setlist">공연 시간·셋리스트</a>
             </div>
           </div>
 
@@ -119,11 +125,11 @@ export default function Home() {
           </div>
           <div className="fnl-about-grid">
             <div className="fnl-about-copy">
-              <p className="fnl-overline">THIS FRIDAY NIGHT</p>
               <h2>두 밴드가 만드는<br />한 번뿐인 라이브</h2>
               <p>
-                NEW RIVER와 24 Hz가 함께 만드는 겨울 합동공연입니다.
-                공연에 대한 자세한 이야기는 준비되는 대로 공개합니다.
+                NEW RIVER와 24 Hz가 각자의 셋으로 무대를 이어 가는 겨울
+                합동공연입니다. 12월의 금요일 밤, 서로 다른 두 밴드의
+                라이브를 한 자리에서 만나보세요.
               </p>
               <dl className="fnl-date-lockup">
                 <div>
@@ -136,34 +142,33 @@ export default function Home() {
                 </div>
               </dl>
             </div>
+            <figure className="fnl-city-break">
+              <img
+                className="fnl-city-backdrop"
+                src={`${basePath}/assets/fnl/city-night.webp`}
+                alt=""
+                width="813"
+                height="1100"
+                loading="lazy"
+                decoding="async"
+                aria-hidden="true"
+              />
+              <img
+                className="fnl-city-poster"
+                src={`${basePath}/assets/fnl/city-night.webp`}
+                alt="도시 야경을 배경으로 한 Friday Night Live 포스터"
+                width="813"
+                height="1100"
+                loading="lazy"
+                decoding="async"
+              />
+              <figcaption>
+                <span>SEOUL · HAPJEONG</span>
+                <strong>DEC 11 · 001 CLUB</strong>
+              </figcaption>
+            </figure>
           </div>
         </section>
-
-        <figure className="fnl-city-break">
-          <img
-            className="fnl-city-backdrop"
-            src={`${basePath}/assets/fnl/city-night.webp`}
-            alt=""
-            width="813"
-            height="1100"
-            loading="lazy"
-            decoding="async"
-            aria-hidden="true"
-          />
-          <img
-            className="fnl-city-poster"
-            src={`${basePath}/assets/fnl/city-night.webp`}
-            alt="도시 야경을 배경으로 한 Friday Night Live 포스터"
-            width="813"
-            height="1100"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>
-            <span>SEOUL · HAPJEONG</span>
-            <strong>DEC 11 · 001 CLUB</strong>
-          </figcaption>
-        </figure>
 
         <section className="fnl-section fnl-bands" id="bands">
           <div className="fnl-section-label fnl-section-label-light">
@@ -171,7 +176,6 @@ export default function Home() {
             <p>TONIGHT&apos;S LINE-UP</p>
           </div>
           <div className="fnl-section-heading">
-            <p>LIVE GUESTS</p>
             <h2>오늘 밤의 두 팀</h2>
           </div>
 
@@ -209,7 +213,6 @@ export default function Home() {
             <p>SHOW RUNDOWN</p>
           </div>
           <div className="fnl-section-heading fnl-section-heading-dark">
-            <p>LIVE CUE SHEET</p>
             <h2>공연 시간 &amp; 셋리스트</h2>
             <span>시간과 곡 순서는 준비 과정에서 변경될 수 있습니다.</span>
           </div>
@@ -234,7 +237,10 @@ export default function Home() {
               <span className="fnl-setlist-no">RUN OF SHOW</span>
               <span>
                 <strong>전체 셋리스트</strong>
-                <small>눌러서 펼쳐보기</small>
+                <small>
+                  <span className="fnl-setlist-state-closed">눌러서 펼쳐보기</span>
+                  <span className="fnl-setlist-state-open">셋리스트 접기</span>
+                </small>
               </span>
               <span className="fnl-setlist-count">{songCount} SONGS</span>
               <i aria-hidden="true" />
@@ -265,7 +271,7 @@ export default function Home() {
                           rel="noreferrer"
                           aria-label={`${song.title} 공식 YouTube 영상 새 창에서 보기`}
                         >
-                          YOUTUBE ↗
+                          원곡 듣기 ↗
                         </a>
                       </li>
                     ))}
@@ -286,7 +292,6 @@ export default function Home() {
           </div>
           <div className="fnl-ticket-grid">
             <div className="fnl-ticket-intro">
-              <p>ADMIT ONE</p>
               <h2>관람 안내</h2>
               <strong>{event.ticketPrice}</strong>
               <span>1인 관람료</span>
@@ -350,9 +355,9 @@ export default function Home() {
               <h2>{event.venue}</h2>
               <address>{event.address}</address>
               <div className="fnl-venue-actions">
-                <a href={event.mapUrl} target="_blank" rel="noreferrer">네이버 지도 ↗</a>
-                <a href={event.kakaoMapUrl} target="_blank" rel="noreferrer">카카오맵 ↗</a>
-                <a href={event.venueGuideUrl} target="_blank" rel="noreferrer">공식 사이트 ↗</a>
+                <a href={event.mapUrl} target="_blank" rel="noreferrer">네이버 지도로 길찾기 ↗</a>
+                <a href={event.kakaoMapUrl} target="_blank" rel="noreferrer">카카오맵으로 길찾기 ↗</a>
+                <a href={event.venueGuideUrl} target="_blank" rel="noreferrer">001클럽 안내 보기 ↗</a>
               </div>
             </div>
             <dl className="fnl-venue-facts">
@@ -369,7 +374,6 @@ export default function Home() {
             <p>HOUSE RULES</p>
           </div>
           <div className="fnl-section-heading fnl-section-heading-dark">
-            <p>BEFORE THE SHOW</p>
             <h2>자주 묻는 질문</h2>
           </div>
           <div className="fnl-faq-list">
