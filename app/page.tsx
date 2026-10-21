@@ -24,6 +24,53 @@ const faqs = [
   },
 ];
 
+const marqueeWords = [
+  { label: "FRIDAY", width: 900 },
+  { label: "NIGHT", width: 790 },
+  { label: "LIVE", width: 580 },
+];
+
+function MarqueeWord({ label, width, index }: { label: string; width: number; index: number }) {
+  const patternId = `fnl-bulbs-${label.toLowerCase()}`;
+
+  return (
+    <svg
+      className={`fnl-marquee-word fnl-marquee-word-${index + 1}`}
+      viewBox="0 0 1000 230"
+      aria-hidden="true"
+      focusable="false"
+    >
+      <defs>
+        <pattern id={patternId} width="48" height="48" patternUnits="userSpaceOnUse">
+          <circle className="fnl-marquee-bulb-halo" cx="24" cy="24" r="11" />
+          <circle className="fnl-marquee-bulb" cx="24" cy="24" r="6" />
+        </pattern>
+      </defs>
+      <text
+        className="fnl-marquee-word-face"
+        x="500"
+        y="190"
+        textAnchor="middle"
+        textLength={width}
+        lengthAdjust="spacingAndGlyphs"
+      >
+        {label}
+      </text>
+      <text
+        className="fnl-marquee-word-bulbs"
+        x="500"
+        y="190"
+        textAnchor="middle"
+        textLength={width}
+        lengthAdjust="spacingAndGlyphs"
+        fill={`url(#${patternId})`}
+      >
+        {label}
+      </text>
+    </svg>
+  );
+}
+
 export default function Home() {
   const basePath = process.env.NEXT_PUBLIC_BASE_PATH ?? "";
   const songCount = setlists.reduce(
@@ -76,9 +123,9 @@ export default function Home() {
             <div className="fnl-marquee">
               <span className="fnl-marquee-kicker">PRESENTS</span>
               <h1 id="fnl-hero-title" aria-label="Friday Night Live">
-                <span data-text="FRIDAY">FRIDAY</span>
-                <span data-text="NIGHT">NIGHT</span>
-                <span data-text="LIVE">LIVE</span>
+                {marqueeWords.map((word, index) => (
+                  <MarqueeWord key={word.label} {...word} index={index} />
+                ))}
               </h1>
               <span className="fnl-marquee-caption">LIVE MUSIC · SEOUL</span>
             </div>
@@ -111,7 +158,18 @@ export default function Home() {
         </section>
 
         <section className="fnl-section fnl-about" id="about">
-          <div className="fnl-section-label">
+          <img
+            className="fnl-about-city"
+            src={`${basePath}/assets/fnl/city-right.webp`}
+            alt=""
+            width="1600"
+            height="900"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <div className="fnl-about-shade" aria-hidden="true" />
+          <div className="fnl-section-label fnl-section-label-light">
             <span>01</span>
             <p>OPENING MONOLOGUE</p>
           </div>
@@ -136,32 +194,6 @@ export default function Home() {
             </div>
           </div>
         </section>
-
-        <figure className="fnl-city-break">
-          <img
-            className="fnl-city-backdrop"
-            src={`${basePath}/assets/fnl/city-night.webp`}
-            alt=""
-            width="813"
-            height="1100"
-            loading="lazy"
-            decoding="async"
-            aria-hidden="true"
-          />
-          <img
-            className="fnl-city-poster"
-            src={`${basePath}/assets/fnl/city-night.webp`}
-            alt="도시 야경을 배경으로 한 Friday Night Live 포스터"
-            width="813"
-            height="1100"
-            loading="lazy"
-            decoding="async"
-          />
-          <figcaption>
-            <span>SEOUL · HAPJEONG</span>
-            <strong>DEC 11 · 001 CLUB</strong>
-          </figcaption>
-        </figure>
 
         <section className="fnl-section fnl-bands" id="bands">
           <div className="fnl-section-label fnl-section-label-light">
@@ -275,6 +307,24 @@ export default function Home() {
               )}
             </div>
           </details>
+        </section>
+
+        <section className="fnl-cinema-break" aria-labelledby="fnl-cinema-title">
+          <img
+            src={`${basePath}/assets/fnl/cinema-stairs.webp`}
+            alt=""
+            width="1600"
+            height="900"
+            loading="lazy"
+            decoding="async"
+            aria-hidden="true"
+          />
+          <div className="fnl-cinema-sign">
+            <p>THE SHOW STARTS HERE</p>
+            <h2 id="fnl-cinema-title">FNL</h2>
+            <span>FRIDAY NIGHT LIVE · SEOUL</span>
+          </div>
+          <small>DEC 11 · 001 CLUB</small>
         </section>
 
         <section className="fnl-section fnl-ticket" id="ticket">
