@@ -566,8 +566,8 @@
   width: min(100%, 330px);
   height: auto;
   justify-self: center;
-  opacity: 0.82;
-  filter: brightness(1.2) drop-shadow(0 0 24px rgba(242, 231, 208, 0.16));
+  opacity: 0.94;
+  filter: drop-shadow(0 0 24px rgba(193, 18, 31, 0.2));
 }
 
 .fnl-about-copy h2 {
@@ -729,8 +729,61 @@
 .fnl-schedule-date dl div { display: grid; grid-template-columns: 72px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(242, 231, 208, 0.16); }
 .fnl-schedule-date dt { color: rgba(242, 231, 208, 0.52); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: 0.12em; }
 .fnl-schedule-date dd { margin: 0; font-size: 13px; font-weight: 780; }
-.fnl-schedule-date > a { display: inline-flex; min-height: 46px; margin-top: 22px; align-items: center; justify-content: center; gap: 7px; border: 1px solid rgba(242, 231, 208, 0.5); font-size: 13px; font-weight: 760; transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease; }
-.fnl-schedule-date > a:hover { border-color: var(--fnl-ivory); background: var(--fnl-ivory); color: var(--fnl-red-dark); }
+
+.fnl-calendar-menu { margin-top: 22px; }
+
+.fnl-calendar-menu > summary {
+  display: grid;
+  min-height: 46px;
+  grid-template-columns: auto 1fr auto;
+  align-items: center;
+  gap: 7px;
+  border: 1px solid rgba(242, 231, 208, 0.5);
+  padding: 0 14px;
+  cursor: pointer;
+  font-size: 13px;
+  font-weight: 760;
+  list-style: none;
+  transition: background-color 220ms ease, color 220ms ease, border-color 220ms ease;
+}
+
+.fnl-calendar-menu > summary::-webkit-details-marker { display: none; }
+.fnl-calendar-menu > summary:hover,
+.fnl-calendar-menu[open] > summary { border-color: var(--fnl-ivory); background: var(--fnl-ivory); color: var(--fnl-red-dark); }
+
+.fnl-calendar-menu > summary i {
+  width: 7px;
+  height: 7px;
+  border-right: 1px solid currentColor;
+  border-bottom: 1px solid currentColor;
+  transform: rotate(45deg) translateY(-2px);
+  transition: transform 180ms ease;
+}
+
+.fnl-calendar-menu[open] > summary i { transform: rotate(225deg) translate(-2px, -2px); }
+
+.fnl-calendar-options {
+  display: grid;
+  border-right: 1px solid rgba(242, 231, 208, 0.28);
+  border-bottom: 1px solid rgba(242, 231, 208, 0.28);
+  border-left: 1px solid rgba(242, 231, 208, 0.28);
+}
+
+.fnl-calendar-options a {
+  display: flex;
+  min-width: 0;
+  align-items: center;
+  justify-content: space-between;
+  gap: 12px;
+  padding: 12px 13px;
+  background: rgba(7, 6, 6, 0.16);
+  transition: background-color 180ms ease, color 180ms ease;
+}
+
+.fnl-calendar-options a + a { border-top: 1px solid rgba(242, 231, 208, 0.16); }
+.fnl-calendar-options a:hover { background: rgba(242, 231, 208, 0.12); }
+.fnl-calendar-options strong { font-size: 11px; }
+.fnl-calendar-options span { color: rgba(242, 231, 208, 0.56); font-family: var(--font-geist-mono), monospace; font-size: 7px; letter-spacing: 0.04em; text-align: right; }
 
 .fnl-bands .fnl-section-heading { margin-bottom: 38px; }
 

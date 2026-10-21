@@ -42,6 +42,12 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /class="fnl-schedule-board"/);
   assert.match(html, /LIVE 시작까지/);
   assert.match(html, /fnl-2026\.ics/);
+  assert.match(html, /assets\/fnl\/logo-red\.webp/);
+  assert.match(html, /Google Calendar/);
+  assert.match(html, /calendar\.google\.com\/calendar\/render/);
+  assert.match(html, /Apple · 기본 캘린더/);
+  assert.match(html, /Outlook/);
+  assert.match(html, /outlook\.live\.com\/calendar\/0\/deeplink\/compose/);
   assert.match(html, /fnl-admit-ticket/);
   assert.equal((html.match(/class="fnl-program-sheet(?: fnl-faq-sheet)?"/g) ?? []).length, 2);
   assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);

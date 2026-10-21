@@ -4,6 +4,30 @@ import { EventCountdown } from "./event-countdown";
 import { ScrollExperience } from "./scroll-experience";
 import { VenueActions } from "./venue-actions";
 
+const calendarTitle = "FNL — Friday Night Live";
+const calendarDescription = "NEW RIVER × 24 Hz 합동공연";
+const calendarLocation = `${event.venue}, ${event.address}`;
+const googleCalendarUrl = `https://calendar.google.com/calendar/render?${new URLSearchParams(
+  {
+    action: "TEMPLATE",
+    text: calendarTitle,
+    dates: "20261211T100000Z/20261211T123000Z",
+    details: calendarDescription,
+    location: calendarLocation,
+  },
+).toString()}`;
+const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?${new URLSearchParams(
+  {
+    path: "/calendar/action/compose",
+    rru: "addevent",
+    subject: calendarTitle,
+    startdt: "2026-12-11T10:00:00Z",
+    enddt: "2026-12-11T12:30:00Z",
+    body: calendarDescription,
+    location: calendarLocation,
+  },
+).toString()}`;
+
 const faqs = [
   {
     question: "입장 및 신청은 어떻게 하나요?",
@@ -132,7 +156,7 @@ export default function Home() {
           <div className="fnl-about-grid">
             <img
               className="fnl-about-mark"
-              src={`${basePath}/assets/fnl/logo-white.webp`}
+              src={`${basePath}/assets/fnl/logo-red.webp`}
               alt=""
               width="1100"
               height="1000"
@@ -217,10 +241,27 @@ export default function Home() {
                 <div><dt>END</dt><dd>{event.expectedEnd}</dd></div>
                 <div><dt>VENUE</dt><dd>{event.venue}</dd></div>
               </dl>
-              <a href={`${basePath}/fnl-2026.ics`} download>
-                <span aria-hidden="true">＋</span>
-                캘린더에 추가
-              </a>
+              <details className="fnl-calendar-menu">
+                <summary>
+                  <span aria-hidden="true">＋</span>
+                  캘린더에 추가
+                  <i aria-hidden="true" />
+                </summary>
+                <div className="fnl-calendar-options">
+                  <a href={googleCalendarUrl} target="_blank" rel="noreferrer">
+                    <strong>Google Calendar</strong>
+                    <span>새 탭에서 일정 만들기 ↗</span>
+                  </a>
+                  <a href={`${basePath}/fnl-2026.ics`} download>
+                    <strong>Apple · 기본 캘린더</strong>
+                    <span>일정 파일로 추가하기 ↓</span>
+                  </a>
+                  <a href={outlookCalendarUrl} target="_blank" rel="noreferrer">
+                    <strong>Outlook</strong>
+                    <span>새 탭에서 일정 만들기 ↗</span>
+                  </a>
+                </div>
+              </details>
             </div>
           </div>
         </section>
