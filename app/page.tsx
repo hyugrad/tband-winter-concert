@@ -77,7 +77,9 @@ export default function Home() {
               <span className="fnl-marquee-kicker">PRESENTS</span>
               <h1 id="fnl-hero-title" aria-label="Friday Night Live">
                 <span data-text="FRIDAY">FRIDAY</span>
+                <i className="fnl-title-divider" aria-hidden="true" />
                 <span data-text="NIGHT">NIGHT</span>
+                <i className="fnl-title-divider" aria-hidden="true" />
                 <span data-text="LIVE">LIVE</span>
               </h1>
               <span className="fnl-marquee-caption">LIVE MUSIC · SEOUL</span>
