@@ -679,17 +679,85 @@
 }
 
 .fnl-program-sheet {
+  position: relative;
   padding: clamp(28px, 5vw, 58px);
-  border: 1px solid rgba(240, 198, 117, 0.32);
+  transform: rotate(-0.18deg);
+  transform-origin: center top;
+  clip-path: polygon(0.35% 0.45%, 99.5% 0%, 100% 98.9%, 99.35% 100%, 0% 99.55%);
   background:
-    radial-gradient(circle at 12% 12%, rgba(98, 65, 34, 0.08), transparent 20%),
-    repeating-linear-gradient(0deg, transparent 0 27px, rgba(21, 17, 18, 0.035) 28px),
-    var(--fnl-paper);
+    linear-gradient(90deg, transparent 0 51.5%, rgba(68, 42, 19, 0.045) 51.7%, transparent 52%),
+    radial-gradient(circle at 12% 12%, rgba(98, 65, 34, 0.11), transparent 22%),
+    radial-gradient(circle at 88% 78%, rgba(98, 65, 34, 0.06), transparent 26%),
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(21, 17, 18, 0.04) 28px),
+    #decca6;
   color: var(--fnl-ink);
-  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
+  filter: drop-shadow(0 26px 30px rgba(0, 0, 0, 0.36));
+  box-shadow: inset 0 0 48px rgba(87, 54, 24, 0.08);
+}
+
+.fnl-program-sheet::before {
+  position: absolute;
+  z-index: 2;
+  top: 9px;
+  left: 7%;
+  width: 116px;
+  height: 25px;
+  transform: rotate(-2.4deg);
+  background:
+    linear-gradient(90deg, rgba(255, 255, 255, 0.15), transparent 16% 84%, rgba(72, 45, 16, 0.08)),
+    rgba(202, 177, 126, 0.68);
+  box-shadow: 0 2px 4px rgba(76, 45, 17, 0.12);
+  content: "";
+}
+
+.fnl-program-sheet::after {
+  position: absolute;
+  top: 21px;
+  right: clamp(24px, 4vw, 50px);
+  padding: 5px 8px 4px;
+  transform: rotate(1.4deg);
+  border: 2px solid rgba(101, 9, 17, 0.58);
+  color: rgba(101, 9, 17, 0.68);
+  content: "FNL · DEC 11 · LIVE";
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 7px;
+  font-weight: 850;
+  letter-spacing: 0.12em;
 }
 
 .fnl-program-sheet > .fnl-section-label { margin-bottom: 40px; }
+.fnl-program-sheet > .fnl-section-label span {
+  transform: rotate(-3deg);
+  border: 2px double var(--fnl-red-dark);
+  border-radius: 1px;
+  color: var(--fnl-red-dark);
+}
+
+.fnl-guide > .fnl-faq-sheet {
+  width: min(88%, 940px);
+  transform: rotate(0.28deg);
+  background:
+    linear-gradient(90deg, transparent 0 48%, rgba(68, 42, 19, 0.04) 48.2%, transparent 48.5%),
+    radial-gradient(circle at 15% 15%, rgba(98, 65, 34, 0.12), transparent 25%),
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(21, 17, 18, 0.04) 28px),
+    #d8c39d;
+}
+
+.fnl-faq-sheet::before {
+  top: 13px;
+  left: 50%;
+  width: 15px;
+  height: 15px;
+  transform: translateX(-50%);
+  border: 1px solid #6d421e;
+  border-radius: 50%;
+  background: radial-gradient(circle at 35% 30%, #fff0b2 0 12%, #bd7a32 42%, #5b3216 100%);
+  box-shadow: 0 3px 6px rgba(32, 16, 6, 0.42);
+}
+
+.fnl-faq-sheet::after {
+  content: "AUDIENCE NOTICE";
+}
 
 .fnl-timeline {
   display: grid;
@@ -957,7 +1025,15 @@
   .fnl-curtain { width: 57%; }
   .fnl-section { padding: 58px 18px; }
   .fnl-section-label { margin-bottom: 32px; }
-  .fnl-program-sheet { padding: 27px 16px 30px; }
+  .fnl-program-sheet {
+    padding: 44px 16px 30px;
+    transform: none;
+    clip-path: polygon(0.6% 0.3%, 99.4% 0%, 100% 99.3%, 0% 100%);
+  }
+  .fnl-program-sheet::before { top: 8px; left: 8%; width: 88px; height: 21px; }
+  .fnl-program-sheet::after { top: 13px; right: 18px; padding: 4px 6px 3px; font-size: 6px; }
+  .fnl-guide > .fnl-faq-sheet { width: 100%; transform: none; }
+  .fnl-faq-sheet::before { top: 10px; left: 50%; width: 13px; height: 13px; }
   .fnl-program-sheet > .fnl-section-label { margin-bottom: 30px; }
   .fnl-about-grid,
   .fnl-ticket-grid,
