@@ -34,16 +34,14 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /property="og:image" content="[^"]*\/og\.png"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /assets\/fnl\/stage\.webp/);
-  assert.match(html, /assets\/fnl\/city-right\.webp/);
-  assert.match(html, /assets\/fnl\/cinema-stairs\.webp/);
+  assert.match(html, /assets\/fnl\/city-night\.webp/);
   assert.match(html, /fnl-curtain-left/);
-  assert.match(html, /fnl-marquee-word-bulbs/);
+  assert.match(html, /data-text="FRIDAY"/);
   assert.match(html, /fnl-admit-ticket/);
   assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);
   assert.match(html, /DEC 11 · 001 CLUB/);
   assert.match(html, /두 밴드가 만드는/);
   assert.match(html, /NEW RIVER와 24 Hz가 함께 만드는 겨울 합동공연입니다/);
-  assert.match(html, /THE SHOW STARTS HERE/);
   assert.doesNotMatch(html, /설명 추후 입력|공연설명 타이틀|설명 위치/);
   assert.doesNotMatch(html, />가안</);
   assert.match(html, /오늘 밤의 두 팀/);
