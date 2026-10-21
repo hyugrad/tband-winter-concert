@@ -268,8 +268,8 @@
   display: block;
   flex: none;
   width: clamp(70px, 18vw, 128px);
-  height: clamp(7px, 0.9vw, 10px);
-  margin: clamp(2px, 0.35vw, 5px) 0;
+  height: 4px;
+  margin: clamp(3px, 0.4vw, 6px) 0;
 }
 
 .fnl-title-divider::before {
@@ -278,22 +278,9 @@
   right: 0;
   left: 0;
   height: 1px;
-  background: linear-gradient(90deg, transparent, rgba(240, 198, 117, 0.76) 24% 44%, transparent 44% 56%, rgba(240, 198, 117, 0.76) 56% 76%, transparent);
-  box-shadow: 0 0 7px rgba(255, 218, 139, 0.64);
+  background: linear-gradient(90deg, transparent, rgba(240, 198, 117, 0.48) 24% 76%, transparent);
+  box-shadow: 0 0 4px rgba(255, 218, 139, 0.32);
   content: "";
-}
-
-.fnl-title-divider::after {
-  position: absolute;
-  top: 50%;
-  left: 50%;
-  width: 6px;
-  height: 6px;
-  border: 1px solid #f0c675;
-  background: #86121c;
-  box-shadow: 0 0 9px rgba(255, 218, 139, 0.9);
-  content: "";
-  transform: translate(-50%, -50%) rotate(45deg);
 }
 
 .fnl-marquee > h1 > span::after {
@@ -572,18 +559,17 @@
 .fnl-about {
   min-height: auto;
   background:
-    linear-gradient(rgba(21, 17, 18, 0.025) 1px, transparent 1px),
-    var(--fnl-ivory);
-  background-size: 100% 28px;
-  color: var(--fnl-ink);
+    radial-gradient(circle at 78% 44%, rgba(193, 18, 31, 0.14), transparent 36%),
+    linear-gradient(180deg, #070606 0%, #100708 48%, #16090b 100%);
+  color: var(--fnl-ivory);
 }
 
 .fnl-about::after {
   position: absolute;
   z-index: -1;
-  right: max(20px, calc((100vw - var(--fnl-max)) / 2));
+  left: max(20px, calc((100vw - var(--fnl-max)) / 2));
   bottom: -0.13em;
-  color: rgba(101, 9, 17, 0.055);
+  color: rgba(242, 231, 208, 0.025);
   content: "FNL";
   font-family: Impact, Haettenschweiler, "Arial Narrow Bold", sans-serif;
   font-size: clamp(9rem, 27vw, 22rem);
@@ -594,15 +580,20 @@
 
 .fnl-about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.72fr);
+  grid-template-columns: minmax(0, 760px);
+  justify-content: end;
   align-items: center;
-  gap: clamp(40px, 6vw, 76px);
+}
+
+.fnl-about-copy h2 {
+  font-size: clamp(2.25rem, 5vw, 4.25rem);
+  letter-spacing: -0.045em;
 }
 
 .fnl-about-copy > p:not(.fnl-overline) {
   max-width: 610px;
   margin: 24px 0 0;
-  color: rgba(21, 17, 18, 0.72);
+  color: rgba(242, 231, 208, 0.7);
   font-size: clamp(15px, 2vw, 18px);
   line-height: 1.8;
   word-break: keep-all;
@@ -612,78 +603,19 @@
   display: grid;
   margin: 38px 0 0;
   grid-template-columns: repeat(2, minmax(0, 1fr));
-  border-top: 3px solid var(--fnl-ink);
-  border-bottom: 1px solid rgba(21, 17, 18, 0.34);
+  border-top: 2px solid rgba(242, 231, 208, 0.68);
+  border-bottom: 1px solid rgba(242, 231, 208, 0.2);
 }
 
 .fnl-date-lockup div { padding: 16px 0 18px; }
-.fnl-date-lockup div + div { border-left: 1px solid rgba(21, 17, 18, 0.24); padding-left: 20px; }
+.fnl-date-lockup div + div { border-left: 1px solid rgba(242, 231, 208, 0.18); padding-left: 20px; }
 .fnl-date-lockup dt { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: 0.18em; }
 .fnl-date-lockup dd { margin: 6px 0 0; font-size: clamp(18px, 3vw, 28px); font-weight: 780; letter-spacing: -0.04em; }
-
-.fnl-city-break {
-  position: relative;
-  width: 100%;
-  height: clamp(430px, 52vw, 650px);
-  margin: 0;
-  overflow: hidden;
-  border: 1px solid rgba(21, 17, 18, 0.18);
-  background: var(--fnl-black);
-  box-shadow: 0 24px 46px rgba(21, 17, 18, 0.18);
-}
-
-.fnl-city-break::after {
-  position: absolute;
-  inset: 0;
-  background:
-    linear-gradient(180deg, var(--fnl-ivory) 0, transparent 10%, transparent 76%, var(--fnl-black) 100%),
-    linear-gradient(90deg, rgba(7, 6, 6, 0.62), transparent 28% 72%, rgba(7, 6, 6, 0.48));
-  content: "";
-  pointer-events: none;
-}
-
-.fnl-city-backdrop {
-  position: absolute;
-  inset: -24px;
-  width: calc(100% + 48px);
-  height: calc(100% + 48px);
-  object-fit: cover;
-  object-position: center 58%;
-  filter: blur(16px) brightness(0.48) saturate(0.85);
-  transform: scale(1.05);
-}
-
-.fnl-city-poster {
-  position: relative;
-  display: block;
-  width: 100%;
-  height: 100%;
-  object-fit: contain;
-  filter: drop-shadow(0 0 42px rgba(0, 0, 0, 0.62));
-}
-
-.fnl-city-break figcaption {
-  position: absolute;
-  z-index: 1;
-  right: 22px;
-  bottom: 24px;
-  left: 22px;
-  display: flex;
-  align-items: flex-end;
-  justify-content: space-between;
-  gap: 20px;
-  color: var(--fnl-ivory);
-  font-family: var(--font-geist-mono), monospace;
-  text-shadow: 0 2px 12px #000;
-}
-
-.fnl-city-break figcaption span { font-size: 9px; letter-spacing: 0.22em; }
-.fnl-city-break figcaption strong { font-size: clamp(12px, 2vw, 17px); letter-spacing: 0.08em; }
 
 .fnl-bands {
   background:
     radial-gradient(circle at 82% 20%, rgba(193, 18, 31, 0.19), transparent 30%),
-    linear-gradient(135deg, #100708, #070606 68%);
+    linear-gradient(180deg, #16090b 0%, #100708 24%, #070606 68%);
 }
 
 .fnl-bands::before {
@@ -734,9 +666,18 @@
 .fnl-band-card-copy p { min-height: 3.2em; margin: 13px 0 20px; color: rgba(242, 231, 208, 0.7); font-size: 15px; line-height: 1.7; word-break: keep-all; }
 .fnl-band-card-copy > span { display: inline-flex; padding: 7px 10px; background: var(--fnl-red-dark); color: var(--fnl-ivory); font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: 0.08em; }
 
-.fnl-rundown,
+.fnl-rundown {
+  background:
+    linear-gradient(180deg, #070606 0, rgba(7, 6, 6, 0.58) 26px, transparent 76px),
+    radial-gradient(circle at 12% 12%, rgba(98, 65, 34, 0.08), transparent 20%),
+    repeating-linear-gradient(0deg, transparent 0 27px, rgba(21, 17, 18, 0.035) 28px),
+    var(--fnl-paper);
+  color: var(--fnl-ink);
+}
+
 .fnl-guide {
   background:
+    linear-gradient(180deg, #0c0909 0, rgba(12, 9, 9, 0.55) 24px, transparent 72px),
     radial-gradient(circle at 12% 12%, rgba(98, 65, 34, 0.08), transparent 20%),
     repeating-linear-gradient(0deg, transparent 0 27px, rgba(21, 17, 18, 0.035) 28px),
     var(--fnl-paper);
@@ -804,6 +745,7 @@
 
 .fnl-ticket {
   background:
+    linear-gradient(180deg, var(--fnl-paper) 0, rgba(232, 216, 184, 0.34) 24px, transparent 74px),
     linear-gradient(90deg, transparent 49.8%, rgba(242, 231, 208, 0.05) 50%, transparent 50.2%),
     var(--fnl-red-dark);
 }
@@ -912,6 +854,7 @@
 
 .fnl-venue {
   background:
+    linear-gradient(180deg, var(--fnl-red-dark) 0, rgba(101, 9, 17, 0.42) 24px, transparent 72px),
     radial-gradient(circle at 85% 25%, rgba(193, 18, 31, 0.2), transparent 27%),
     #0c0909;
 }
@@ -1013,10 +956,7 @@
   .fnl-ticket-grid,
   .fnl-venue-grid { grid-template-columns: 1fr; }
   .fnl-about { min-height: auto; }
-  .fnl-about::after { right: -0.08em; font-size: clamp(8rem, 52vw, 13rem); }
-  .fnl-city-break { height: min(62svh, 520px); }
-  .fnl-city-backdrop { object-position: center center; }
-  .fnl-city-break figcaption { bottom: 24px; flex-direction: column; align-items: flex-start; gap: 6px; }
+  .fnl-about::after { right: auto; left: -0.08em; font-size: clamp(8rem, 52vw, 13rem); }
   .fnl-band-grid { grid-template-columns: 1fr; }
   .fnl-band-card, .fnl-band-card:first-child { min-height: 410px; transform: none; }
   .fnl-band-logo-wrap { height: 185px; }
@@ -1086,7 +1026,7 @@
   .fnl-hero-actions a { min-height: 44px; padding: 0 13px; font-size: 12px; }
   .fnl-scroll-cue { font-size: 7px; }
   .fnl-date-lockup { grid-template-columns: 1fr; }
-  .fnl-date-lockup div + div { border-top: 1px solid rgba(21, 17, 18, 0.24); border-left: 0; padding-left: 0; }
+  .fnl-date-lockup div + div { border-top: 1px solid rgba(242, 231, 208, 0.18); border-left: 0; padding-left: 0; }
   .fnl-ticket-stub > div { padding: 23px 20px; }
   .fnl-admit-ticket { min-height: 126px; grid-template-columns: minmax(0, 1fr) 64px; }
   .fnl-admit-ticket::before, .fnl-admit-ticket::after { right: 55px; }
