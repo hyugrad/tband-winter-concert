@@ -126,17 +126,16 @@ export default function Home() {
         </section>
 
         <section className="fnl-section fnl-about" id="about">
-          <div className="fnl-section-label">
+          <div className="fnl-section-label fnl-section-label-light">
             <span>01</span>
             <p>OPENING MONOLOGUE</p>
           </div>
           <div className="fnl-about-grid">
             <div className="fnl-about-copy">
-              <h2>두 밴드가 만드는<br />한 번뿐인 라이브</h2>
+              <h2>Friday Night Live</h2>
               <p>
-                NEW RIVER와 24 Hz가 각자의 셋으로 무대를 이어 가는 겨울
-                합동공연입니다. 12월의 금요일 밤, 서로 다른 두 밴드의
-                라이브를 한 자리에서 만나보세요.
+                NEW RIVER와 24 Hz가 함께하는 12월의 금요일 밤입니다.
+                서로 다른 두 밴드의 라이브를 한 자리에서 만나보세요.
               </p>
               <dl className="fnl-date-lockup">
                 <div>
@@ -149,41 +148,16 @@ export default function Home() {
                 </div>
               </dl>
             </div>
-            <figure className="fnl-city-break">
-              <img
-                className="fnl-city-backdrop"
-                src={`${basePath}/assets/fnl/city-night.webp`}
-                alt=""
-                width="813"
-                height="1100"
-                loading="lazy"
-                decoding="async"
-                aria-hidden="true"
-              />
-              <img
-                className="fnl-city-poster"
-                src={`${basePath}/assets/fnl/city-night.webp`}
-                alt="도시 야경을 배경으로 한 Friday Night Live 포스터"
-                width="813"
-                height="1100"
-                loading="lazy"
-                decoding="async"
-              />
-              <figcaption>
-                <span>SEOUL · HAPJEONG</span>
-                <strong>DEC 11 · 001 CLUB</strong>
-              </figcaption>
-            </figure>
           </div>
         </section>
 
         <section className="fnl-section fnl-bands" id="bands">
           <div className="fnl-section-label fnl-section-label-light">
             <span>02</span>
-            <p>TONIGHT&apos;S LINE-UP</p>
+            <p>LIVE GUESTS</p>
           </div>
           <div className="fnl-section-heading">
-            <h2>오늘 밤의 두 팀</h2>
+            <h2>LINE UP</h2>
           </div>
 
           <div className="fnl-band-grid">
