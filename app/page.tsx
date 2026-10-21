@@ -250,7 +250,7 @@ export default function Home() {
                 <div className="fnl-calendar-options">
                   <a href={googleCalendarUrl} target="_blank" rel="noreferrer">
                     <strong>Google Calendar</strong>
-                    <span>새 탭에서 일정 만들기 ↗</span>
+                    <span>로그인 후 일정 만들기 ↗</span>
                   </a>
                   <a href={`${basePath}/fnl-2026.ics`} download>
                     <strong>Apple · 기본 캘린더</strong>
@@ -258,7 +258,7 @@ export default function Home() {
                   </a>
                   <a href={outlookCalendarUrl} target="_blank" rel="noreferrer">
                     <strong>Outlook</strong>
-                    <span>새 탭에서 일정 만들기 ↗</span>
+                    <span>로그인 후 일정 만들기 ↗</span>
                   </a>
                 </div>
               </details>

@@ -91,6 +91,9 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /21세기의 어떤 날/);
   assert.match(html, /LUCY/);
   assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=Rg42mGBDzzQ/);
+  assert.match(html, /좋지 아니한가/);
+  assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=kjYm0lA7XYQ/);
+  assert.doesNotMatch(html, /염라|윤하 ver\.|iq1XuC4R024/);
   assert.match(html, /5,000원/);
   assert.match(html, /사전 예매/);
   assert.match(html, /현장 결제/);
