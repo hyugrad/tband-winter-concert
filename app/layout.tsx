@@ -38,7 +38,7 @@ export const metadata: Metadata = {
     locale: "ko_KR",
     images: [
       {
-        url: "og.png",
+        url: "og.png?v=20261021-fnl",
         width: 1200,
         height: 630,
         alt: "FNL Friday Night Live 공연 안내",
@@ -49,7 +49,7 @@ export const metadata: Metadata = {
     card: "summary_large_image",
     title: "FNL — Friday Night Live",
     description: siteDescription,
-    images: ["og.png"],
+    images: ["og.png?v=20261021-fnl"],
   },
   alternates: {
     canonical: siteUrl,
