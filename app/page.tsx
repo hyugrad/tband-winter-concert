@@ -189,6 +189,7 @@ export default function Home() {
         </section>
 
         <section className="fnl-section fnl-rundown" id="setlist">
+          <div className="fnl-program-sheet">
           <div className="fnl-section-label">
             <span>03</span>
             <p>SHOW RUNDOWN</p>
@@ -267,6 +268,7 @@ export default function Home() {
               )}
             </div>
           </details>
+          </div>
         </section>
 
         <section className="fnl-section fnl-ticket" id="ticket">
@@ -354,6 +356,7 @@ export default function Home() {
         </section>
 
         <section className="fnl-section fnl-guide" id="guide">
+          <div className="fnl-program-sheet fnl-faq-sheet">
           <div className="fnl-section-label">
             <span>06</span>
             <p>HOUSE RULES</p>
@@ -372,6 +375,7 @@ export default function Home() {
                 <p>{faq.answer}</p>
               </details>
             ))}
+          </div>
           </div>
         </section>
       </main>
