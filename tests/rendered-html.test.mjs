@@ -37,6 +37,7 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /assets\/fnl\/city-night\.webp/);
   assert.match(html, /fnl-curtain-left/);
   assert.match(html, /data-text="FRIDAY"/);
+  assert.equal((html.match(/class="fnl-title-divider"/g) ?? []).length, 2);
   assert.match(html, /fnl-admit-ticket/);
   assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);
   assert.match(html, /DEC 11 · 001 CLUB/);
