@@ -39,6 +39,7 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /data-text="FRIDAY"/);
   assert.equal((html.match(/class="fnl-title-divider"/g) ?? []).length, 2);
   assert.match(html, /fnl-admit-ticket/);
+  assert.equal((html.match(/class="fnl-program-sheet(?: fnl-faq-sheet)?"/g) ?? []).length, 2);
   assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);
   assert.match(html, /Friday Night Live/);
   assert.match(html, /NEW RIVER와 24 Hz가 함께하는 12월의 금요일 밤입니다/);

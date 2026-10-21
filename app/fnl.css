@@ -668,21 +668,28 @@
 
 .fnl-rundown {
   background:
-    linear-gradient(180deg, #070606 0, rgba(7, 6, 6, 0.58) 26px, transparent 76px),
-    radial-gradient(circle at 12% 12%, rgba(98, 65, 34, 0.08), transparent 20%),
-    repeating-linear-gradient(0deg, transparent 0 27px, rgba(21, 17, 18, 0.035) 28px),
-    var(--fnl-paper);
-  color: var(--fnl-ink);
+    radial-gradient(circle at 86% 20%, rgba(193, 18, 31, 0.14), transparent 31%),
+    linear-gradient(180deg, #070606 0%, #12080a 58%, #21080d 100%);
 }
 
 .fnl-guide {
   background:
-    linear-gradient(180deg, #0c0909 0, rgba(12, 9, 9, 0.55) 24px, transparent 72px),
+    radial-gradient(circle at 12% 14%, rgba(193, 18, 31, 0.1), transparent 28%),
+    linear-gradient(180deg, #0c0909 0%, #15090b 58%, #070606 100%);
+}
+
+.fnl-program-sheet {
+  padding: clamp(28px, 5vw, 58px);
+  border: 1px solid rgba(240, 198, 117, 0.32);
+  background:
     radial-gradient(circle at 12% 12%, rgba(98, 65, 34, 0.08), transparent 20%),
     repeating-linear-gradient(0deg, transparent 0 27px, rgba(21, 17, 18, 0.035) 28px),
     var(--fnl-paper);
   color: var(--fnl-ink);
+  box-shadow: 0 26px 70px rgba(0, 0, 0, 0.34);
 }
+
+.fnl-program-sheet > .fnl-section-label { margin-bottom: 40px; }
 
 .fnl-timeline {
   display: grid;
@@ -745,9 +752,8 @@
 
 .fnl-ticket {
   background:
-    linear-gradient(180deg, var(--fnl-paper) 0, rgba(232, 216, 184, 0.34) 24px, transparent 74px),
     linear-gradient(90deg, transparent 49.8%, rgba(242, 231, 208, 0.05) 50%, transparent 50.2%),
-    var(--fnl-red-dark);
+    linear-gradient(180deg, #21080d 0%, var(--fnl-red-dark) 18%, #690a12 100%);
 }
 
 .fnl-ticket-grid { display: grid; grid-template-columns: minmax(250px, 0.68fr) minmax(0, 1.32fr); gap: clamp(35px, 7vw, 80px); align-items: stretch; }
@@ -854,9 +860,8 @@
 
 .fnl-venue {
   background:
-    linear-gradient(180deg, var(--fnl-red-dark) 0, rgba(101, 9, 17, 0.42) 24px, transparent 72px),
     radial-gradient(circle at 85% 25%, rgba(193, 18, 31, 0.2), transparent 27%),
-    #0c0909;
+    linear-gradient(180deg, #690a12 0%, #26090d 16%, #0c0909 40%);
 }
 
 .fnl-venue::before { position: absolute; z-index: -1; right: -0.05em; top: 0.02em; color: rgba(242, 231, 208, 0.025); font-size: clamp(15rem, 40vw, 34rem); font-weight: 900; line-height: 1; content: "001"; }
@@ -952,6 +957,8 @@
   .fnl-curtain { width: 57%; }
   .fnl-section { padding: 58px 18px; }
   .fnl-section-label { margin-bottom: 32px; }
+  .fnl-program-sheet { padding: 27px 16px 30px; }
+  .fnl-program-sheet > .fnl-section-label { margin-bottom: 30px; }
   .fnl-about-grid,
   .fnl-ticket-grid,
   .fnl-venue-grid { grid-template-columns: 1fr; }
