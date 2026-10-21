@@ -42,12 +42,17 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);
   assert.match(html, /DEC 11 · 001 CLUB/);
   assert.match(html, /두 밴드가 만드는/);
-  assert.match(html, /NEW RIVER와 24 Hz가 함께 만드는 겨울 합동공연입니다/);
+  assert.match(html, /NEW RIVER와 24 Hz가 각자의 셋으로 무대를 이어 가는 겨울/);
   assert.doesNotMatch(html, /설명 추후 입력|공연설명 타이틀|설명 위치/);
   assert.doesNotMatch(html, />가안</);
   assert.match(html, /오늘 밤의 두 팀/);
   assert.match(html, /2026\. 12\. 11\. FRI/);
   assert.match(html, /class="fnl-hero-meta"/);
+  assert.match(html, /2026\.12\.11 FRI/);
+  assert.match(html, /합정 001클럽/);
+  assert.match(html, /18:30 입장/);
+  assert.match(html, />관람 안내</);
+  assert.match(html, /공연 시간·셋리스트/);
   assert.match(html, /TONIGHT&#x27;S STUDIO/);
   assert.match(html, /001클럽/);
   assert.match(html, /공연 시간 &amp; 셋리스트/);
@@ -55,6 +60,8 @@ test("server-renders the FNL concert page", async () => {
   assert.doesNotMatch(html, /class="fnl-setlist" open/);
   assert.match(html, /전체 셋리스트/);
   assert.match(html, /눌러서 펼쳐보기/);
+  assert.match(html, /셋리스트 접기/);
+  assert.match(html, /원곡 듣기 ↗/);
   assert.doesNotMatch(html, /class="fnl-encore"|합동 앙코르곡|>ENCORE</);
   assert.doesNotMatch(html, /19:00 시작 · 가안|본공연 시작 · 가안/);
   assert.match(html, /사랑하게 될 거야/);
@@ -74,6 +81,8 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /현장 결제/);
   assert.match(html, /Instagram DM/);
   assert.match(html, /주차할 수 있나요\?/);
+  assert.match(html, /네이버 지도로 길찾기 ↗/);
+  assert.match(html, /카카오맵으로 길찾기 ↗/);
 });
 
 test("keeps the previous design available at /old/ without indexing it", async () => {

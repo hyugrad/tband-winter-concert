@@ -250,8 +250,8 @@
   text-shadow:
     0 3px 0 #501018,
     0 7px 15px rgba(0, 0, 0, 0.62),
-    0 0 14px rgba(255, 218, 139, 0.82),
-    0 0 46px rgba(230, 47, 60, 0.72);
+    0 0 12px rgba(255, 218, 139, 0.7),
+    0 0 34px rgba(230, 47, 60, 0.5);
 }
 
 .fnl-marquee > h1 > span[data-text="LIVE"] {
@@ -302,9 +302,9 @@
   color: transparent;
   content: attr(data-text);
   filter:
-    brightness(1.16)
+    brightness(1.12)
     drop-shadow(0 0 4px #fff2bd)
-    drop-shadow(0 0 10px rgba(255, 192, 82, 0.95));
+    drop-shadow(0 0 8px rgba(255, 192, 82, 0.78));
   -webkit-background-clip: text;
   -webkit-text-stroke: 0;
   animation:
@@ -334,18 +334,30 @@
 .fnl-hero-meta {
   display: flex;
   margin-top: 13px;
-  flex-wrap: wrap;
+  flex-direction: column;
   align-items: center;
   justify-content: center;
-  gap: 7px 12px;
+  gap: 4px;
   color: rgba(242, 231, 208, 0.75);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: clamp(11px, 2.4vw, 14px);
+  font-size: clamp(13px, 2.4vw, 15px);
   letter-spacing: 0.06em;
+}
+
+.fnl-hero-meta p {
+  display: flex;
+  margin: 0;
+  align-items: center;
+  justify-content: center;
+  gap: 8px;
 }
 
 .fnl-hero-meta strong {
   color: var(--fnl-ivory);
+}
+
+.fnl-hero-meta small {
+  color: rgba(242, 231, 208, 0.62);
+  font-size: 12px;
 }
 
 .fnl-hero-actions {
@@ -359,17 +371,16 @@
 .fnl-hero-actions a,
 .fnl-venue-actions a {
   display: inline-flex;
-  min-height: 42px;
+  min-height: 48px;
   align-items: center;
   justify-content: center;
   border: 1px solid rgba(242, 231, 208, 0.36);
-  padding: 0 15px;
+  padding: 0 18px;
   background: rgba(7, 6, 6, 0.62);
   color: var(--fnl-ivory);
-  font-family: var(--font-geist-mono), monospace;
-  font-size: 10px;
-  font-weight: 760;
-  letter-spacing: 0.08em;
+  font-size: 14px;
+  font-weight: 720;
+  letter-spacing: -0.015em;
   transition: border-color 180ms ease, background 180ms ease, transform 180ms ease;
 }
 
@@ -526,10 +537,10 @@
 .fnl-ticket-intro h2,
 .fnl-venue-title h2 {
   margin: 0;
-  font-size: clamp(2.2rem, 7vw, 5.4rem);
+  font-size: clamp(2.1rem, 5.2vw, 4.5rem);
   font-weight: 780;
-  letter-spacing: -0.07em;
-  line-height: 0.98;
+  letter-spacing: -0.055em;
+  line-height: 1.04;
   word-break: keep-all;
 }
 
@@ -537,13 +548,13 @@
   display: block;
   margin-top: 18px;
   color: rgba(21, 17, 18, 0.62);
-  font-size: 13px;
+  font-size: 14px;
 }
 
 .fnl-section-heading-dark > p { color: var(--fnl-red-dark); }
 
 .fnl-about {
-  min-height: min(78svh, 760px);
+  min-height: auto;
   background:
     linear-gradient(rgba(21, 17, 18, 0.025) 1px, transparent 1px),
     var(--fnl-ivory);
@@ -567,9 +578,9 @@
 
 .fnl-about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 760px);
+  grid-template-columns: minmax(0, 0.95fr) minmax(320px, 0.72fr);
   align-items: center;
-  justify-content: start;
+  gap: clamp(40px, 6vw, 76px);
 }
 
 .fnl-about-copy > p:not(.fnl-overline) {
@@ -597,10 +608,12 @@
 .fnl-city-break {
   position: relative;
   width: 100%;
-  height: clamp(430px, 58vw, 760px);
+  height: clamp(430px, 52vw, 650px);
   margin: 0;
   overflow: hidden;
+  border: 1px solid rgba(21, 17, 18, 0.18);
   background: var(--fnl-black);
+  box-shadow: 0 24px 46px rgba(21, 17, 18, 0.18);
 }
 
 .fnl-city-break::after {
@@ -636,9 +649,9 @@
 .fnl-city-break figcaption {
   position: absolute;
   z-index: 1;
-  right: max(20px, calc((100vw - var(--fnl-max)) / 2));
-  bottom: 34px;
-  left: max(20px, calc((100vw - var(--fnl-max)) / 2));
+  right: 22px;
+  bottom: 24px;
+  left: 22px;
   display: flex;
   align-items: flex-end;
   justify-content: space-between;
@@ -698,11 +711,11 @@
   background: radial-gradient(circle, rgba(193, 18, 31, 0.12), transparent 60%);
 }
 
-.fnl-band-logo { width: min(64%, 235px); height: min(78%, 180px); object-fit: contain; filter: grayscale(1) contrast(1.18) brightness(1.7); }
+.fnl-band-logo { width: min(64%, 235px); height: min(78%, 180px); object-fit: contain; filter: grayscale(1) contrast(1.2) brightness(1.25); mix-blend-mode: screen; }
 .fnl-band-logo-24hz { width: min(42%, 150px); }
 .fnl-band-card-copy { padding: 26px; border-top: 1px solid var(--fnl-line); }
 .fnl-band-card-copy h3 { margin: 0; font-size: clamp(1.8rem, 4vw, 3.4rem); letter-spacing: -0.055em; }
-.fnl-band-card-copy p { min-height: 3.2em; margin: 13px 0 20px; color: rgba(242, 231, 208, 0.66); font-size: 14px; line-height: 1.65; word-break: keep-all; }
+.fnl-band-card-copy p { min-height: 3.2em; margin: 13px 0 20px; color: rgba(242, 231, 208, 0.7); font-size: 15px; line-height: 1.7; word-break: keep-all; }
 .fnl-band-card-copy > span { display: inline-flex; padding: 7px 10px; background: var(--fnl-red-dark); color: var(--fnl-ivory); font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: 0.08em; }
 
 .fnl-rundown,
@@ -749,6 +762,9 @@
 .fnl-setlist-no, .fnl-setlist-count { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: 0.12em; }
 .fnl-setlist summary strong { display: block; font-size: clamp(19px, 3vw, 27px); letter-spacing: -0.045em; }
 .fnl-setlist summary small { display: block; margin-top: 4px; color: rgba(21, 17, 18, 0.55); font-size: 11px; }
+.fnl-setlist-state-open { display: none; }
+.fnl-setlist[open] .fnl-setlist-state-closed { display: none; }
+.fnl-setlist[open] .fnl-setlist-state-open { display: inline; }
 .fnl-setlist summary i { position: relative; width: 24px; height: 24px; border: 1px solid var(--fnl-ink); border-radius: 50%; }
 .fnl-setlist summary i::before, .fnl-setlist summary i::after { position: absolute; top: 50%; left: 50%; width: 10px; height: 1px; transform: translate(-50%, -50%); background: currentColor; content: ""; }
 .fnl-setlist summary i::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform 160ms ease; }
@@ -766,7 +782,7 @@
 .fnl-setlist-group li strong { display: block; font-size: 16px; letter-spacing: -0.025em; }
 .fnl-setlist-group li small { display: block; margin-top: 3px; color: rgba(21, 17, 18, 0.58); font-size: 11px; }
 .fnl-setlist-group li em { padding: 4px 7px; background: rgba(101, 9, 17, 0.1); color: var(--fnl-red-dark); font-size: 9px; font-style: normal; }
-.fnl-setlist-group li a { padding: 10px 0; font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: 0.08em; }
+.fnl-setlist-group li a { padding: 10px 0; font-size: 11px; font-weight: 750; letter-spacing: -0.01em; }
 .fnl-setlist-group li a:hover { color: var(--fnl-red-dark); }
 .fnl-encore { padding: 20px 12px; margin: 0; font-weight: 700; }
 
@@ -790,8 +806,8 @@
 .fnl-ticket-stub > div + div { border-top: 1px dashed rgba(21, 17, 18, 0.42); }
 .fnl-ticket-stub span { color: var(--fnl-red-dark); font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: 0.16em; }
 .fnl-ticket-stub strong { display: block; margin-top: 12px; font-size: clamp(21px, 4vw, 32px); letter-spacing: -0.05em; }
-.fnl-ticket-stub p { margin: 9px 0 18px; color: rgba(21, 17, 18, 0.65); font-size: 13px; line-height: 1.65; word-break: keep-all; }
-.fnl-ticket-stub small { display: inline-block; padding: 6px 8px; border: 1px solid rgba(21, 17, 18, 0.25); font-size: 9px; }
+.fnl-ticket-stub p { margin: 9px 0 18px; color: rgba(21, 17, 18, 0.68); font-size: 15px; line-height: 1.7; word-break: keep-all; }
+.fnl-ticket-stub small { display: inline-block; padding: 7px 9px; border: 1px solid rgba(21, 17, 18, 0.25); font-size: 11px; }
 
 .fnl-admit-ticket {
   position: relative;
@@ -887,13 +903,13 @@
 .fnl-venue::before { position: absolute; z-index: -1; right: -0.05em; top: 0.02em; color: rgba(242, 231, 208, 0.025); font-size: clamp(15rem, 40vw, 34rem); font-weight: 900; line-height: 1; content: "001"; }
 .fnl-venue-grid { display: grid; grid-template-columns: minmax(0, 1.1fr) minmax(300px, 0.9fr); gap: clamp(50px, 9vw, 110px); align-items: end; }
 .fnl-venue-title > p { margin: 0 0 13px; color: var(--fnl-gold); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 0.12em; }
-.fnl-venue-title h2 { font-size: clamp(4rem, 12vw, 9rem); }
-.fnl-venue-title address { margin-top: 20px; color: rgba(242, 231, 208, 0.62); font-size: 14px; font-style: normal; }
+.fnl-venue-title h2 { font-size: clamp(3.4rem, 8vw, 6.4rem); }
+.fnl-venue-title address { margin-top: 20px; color: rgba(242, 231, 208, 0.72); font-size: 16px; font-style: normal; }
 .fnl-venue-actions { display: flex; margin-top: 26px; flex-wrap: wrap; gap: 8px; }
 .fnl-venue-facts { margin: 0; border-top: 1px solid var(--fnl-line); }
 .fnl-venue-facts div { display: grid; grid-template-columns: 70px 1fr; gap: 20px; padding: 20px 0; border-bottom: 1px solid var(--fnl-line); }
 .fnl-venue-facts dt { font-weight: 800; }
-.fnl-venue-facts dd { margin: 0; color: rgba(242, 231, 208, 0.62); line-height: 1.55; }
+.fnl-venue-facts dd { margin: 0; color: rgba(242, 231, 208, 0.7); font-size: 15px; line-height: 1.6; }
 
 .fnl-guide .fnl-section-heading { margin-bottom: 34px; }
 .fnl-faq-list { border-top: 3px solid var(--fnl-ink); }
@@ -906,7 +922,7 @@
 .fnl-faq-list summary i::before, .fnl-faq-list summary i::after { position: absolute; top: 50%; left: 50%; width: 13px; height: 2px; transform: translate(-50%, -50%); background: currentColor; content: ""; }
 .fnl-faq-list summary i::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform 160ms ease; }
 .fnl-faq-list details[open] summary i::after { transform: translate(-50%, -50%); }
-.fnl-faq-list details > p { max-width: 760px; margin: -2px 34px 24px 46px; color: rgba(21, 17, 18, 0.68); font-size: 14px; line-height: 1.75; word-break: keep-all; }
+.fnl-faq-list details > p { max-width: 760px; margin: -2px 34px 24px 46px; color: rgba(21, 17, 18, 0.7); font-size: 15px; line-height: 1.75; word-break: keep-all; }
 
 .fnl-footer {
   display: grid;
@@ -954,8 +970,8 @@
 }
 
 @keyframes fnl-bulb-breathe {
-  from { filter: brightness(1.08) drop-shadow(0 0 4px #fff2bd) drop-shadow(0 0 9px rgba(255, 192, 82, 0.88)); }
-  to { filter: brightness(1.3) drop-shadow(0 0 6px #fff8d8) drop-shadow(0 0 15px rgba(255, 192, 82, 1)); }
+  from { filter: brightness(1.05) drop-shadow(0 0 3px #fff2bd) drop-shadow(0 0 7px rgba(255, 192, 82, 0.72)); }
+  to { filter: brightness(1.2) drop-shadow(0 0 5px #fff8d8) drop-shadow(0 0 11px rgba(255, 192, 82, 0.86)); }
 }
 
 @media (max-width: 760px) {
@@ -982,7 +998,7 @@
   .fnl-venue-grid { grid-template-columns: 1fr; }
   .fnl-about { min-height: auto; }
   .fnl-about::after { right: -0.08em; font-size: clamp(8rem, 52vw, 13rem); }
-  .fnl-city-break { height: min(82svh, 690px); }
+  .fnl-city-break { height: min(62svh, 520px); }
   .fnl-city-backdrop { object-position: center center; }
   .fnl-city-break figcaption { bottom: 24px; flex-direction: column; align-items: flex-start; gap: 6px; }
   .fnl-band-grid { grid-template-columns: 1fr; }
@@ -1013,7 +1029,7 @@
 
 @media (max-width: 390px) {
   .fnl-hero-actions { margin-top: 18px; }
-  .fnl-hero-actions a { min-height: 39px; padding: 0 12px; font-size: 9px; }
+  .fnl-hero-actions a { min-height: 44px; padding: 0 13px; font-size: 12px; }
   .fnl-scroll-cue { font-size: 7px; }
   .fnl-date-lockup { grid-template-columns: 1fr; }
   .fnl-date-lockup div + div { border-top: 1px solid rgba(21, 17, 18, 0.24); border-left: 0; padding-left: 0; }
