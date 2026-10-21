@@ -145,9 +145,9 @@ export const setlists: SetlistGroup[] = [
     label: "SET",
     songs: [
       {
-        title: "염라",
-        artist: "윤하 ver.",
-        youtube: "https://www.youtube.com/watch?v=iq1XuC4R024",
+        title: "좋지 아니한가",
+        artist: "유다빈밴드",
+        youtube: "https://www.youtube.com/watch?v=kjYm0lA7XYQ",
       },
       {
         title: "샤이닝",
