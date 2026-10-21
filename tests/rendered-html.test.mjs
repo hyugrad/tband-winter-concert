@@ -53,9 +53,12 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /18:30 입장/);
   assert.match(html, />관람 안내</);
   assert.match(html, /공연 시간·셋리스트/);
+  assert.match(html, /모바일 빠른 메뉴/);
+  assert.match(html, /001클럽 길찾기 ↗/);
   assert.match(html, /TONIGHT&#x27;S STUDIO/);
   assert.match(html, /001클럽/);
   assert.match(html, /공연 시간 &amp; 셋리스트/);
+  assert.match(html, /팀별 시작 시간과 곡 순서는 추후/);
   assert.match(html, /<details class="fnl-setlist">/);
   assert.doesNotMatch(html, /class="fnl-setlist" open/);
   assert.match(html, /전체 셋리스트/);
@@ -83,6 +86,7 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /주차할 수 있나요\?/);
   assert.match(html, /네이버 지도로 길찾기 ↗/);
   assert.match(html, /카카오맵으로 길찾기 ↗/);
+  assert.match(html, /주소 복사/);
 });
 
 test("keeps the previous design available at /old/ without indexing it", async () => {

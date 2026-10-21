@@ -1,6 +1,7 @@
 /* eslint-disable @next/next/no-img-element -- Static export serves supplied artwork without runtime optimization. */
 import { bands, encore, event, setlists } from "./content";
 import { ScrollExperience } from "./scroll-experience";
+import { VenueActions } from "./venue-actions";
 
 const faqs = [
   {
@@ -56,6 +57,12 @@ export default function Home() {
         </nav>
       </header>
       <ScrollExperience heroSelector=".fnl-hero" navSelector=".fnl-nav" />
+      <nav className="fnl-mobile-actions" aria-label="모바일 빠른 메뉴">
+        <a href="#ticket">관람 안내</a>
+        <a href={event.mapUrl} target="_blank" rel="noreferrer">
+          001클럽 길찾기 ↗
+        </a>
+      </nav>
 
       <main id="main" tabIndex={-1}>
         <section className="fnl-hero" id="top" aria-labelledby="fnl-hero-title">
@@ -214,7 +221,10 @@ export default function Home() {
           </div>
           <div className="fnl-section-heading fnl-section-heading-dark">
             <h2>공연 시간 &amp; 셋리스트</h2>
-            <span>시간과 곡 순서는 준비 과정에서 변경될 수 있습니다.</span>
+            <span>
+              공연은 19:00에 시작합니다. 팀별 시작 시간과 곡 순서는 추후
+              공개되거나 변경될 수 있습니다.
+            </span>
           </div>
 
           <div className="fnl-timeline" aria-label="공연 시간표">
@@ -354,11 +364,12 @@ export default function Home() {
               <p>{event.dateLabel}</p>
               <h2>{event.venue}</h2>
               <address>{event.address}</address>
-              <div className="fnl-venue-actions">
-                <a href={event.mapUrl} target="_blank" rel="noreferrer">네이버 지도로 길찾기 ↗</a>
-                <a href={event.kakaoMapUrl} target="_blank" rel="noreferrer">카카오맵으로 길찾기 ↗</a>
-                <a href={event.venueGuideUrl} target="_blank" rel="noreferrer">001클럽 안내 보기 ↗</a>
-              </div>
+              <VenueActions
+                address={event.address}
+                mapUrl={event.mapUrl}
+                kakaoMapUrl={event.kakaoMapUrl}
+                venueGuideUrl={event.venueGuideUrl}
+              />
             </div>
             <dl className="fnl-venue-facts">
               <div><dt>지하철</dt><dd>합정역 2번 출구에서 도보 약 4분</dd></div>
