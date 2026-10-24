@@ -46,7 +46,7 @@ export function ScrollExperience({
         String(Math.min(1, Math.max(0, ratio))),
       );
 
-      if (hero && !reducedMotion.matches) {
+      if (hero && finePointer.matches && !reducedMotion.matches) {
         const heroProgress = Math.min(
           1,
           Math.max(0, window.scrollY / Math.max(hero.offsetHeight, 1)),
