@@ -1356,7 +1356,7 @@
   .fnl-apply-intro dl > div:nth-child(odd) { padding-right: 12px; }
   .fnl-apply-intro dl > div:nth-child(even) { padding-left: 12px; border-left: 1px solid var(--fnl-line); }
   .fnl-apply-form { padding: 6px; }
-  .fnl-apply-form iframe { min-height: 1480px; }
+  .fnl-apply-form iframe { min-height: max(1550px, calc(2684px - 212.5vw)); }
   .fnl-apply-placeholder { min-height: 420px; padding: 38px 22px; }
 }
 
