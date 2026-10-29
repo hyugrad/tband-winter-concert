@@ -349,7 +349,7 @@ export default function Home() {
                 <div>
                   <span>BOOKING</span>
                   <strong>{event.ticketMethods.join(" · ")}</strong>
-                  <p>사전 예매 방법과 현장 결제 수단은 확정되는 대로 안내합니다.</p>
+                  <p>사전 예매는 신청양식에서 접수하며, 현장 결제는 입장 시 안내합니다.</p>
                   {event.reservationFormUrl ? (
                     <a className="fnl-booking-button" href={`${basePath}/apply/`}>
                       사전 예매하기 ↗
