@@ -69,7 +69,7 @@ export default function ApplyPage() {
               />
               <p>
                 양식이 보이지 않으면{" "}
-                <a href={event.reservationFormUrl} target="_blank" rel="noreferrer">
+                <a href={event.reservationFormPublicUrl} target="_blank" rel="noreferrer">
                   새 창에서 신청하기 ↗
                 </a>
               </p>

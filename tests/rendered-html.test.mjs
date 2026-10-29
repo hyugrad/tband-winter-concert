@@ -116,16 +116,18 @@ test("keeps the previous design available at /old/ without indexing it", async (
   assert.match(html, /name="robots" content="noindex, nofollow"/);
 });
 
-test("prepares the reservation page without exposing an unfinished form", async () => {
+test("renders the published reservation form", async () => {
   const response = await render("/apply");
   assert.equal(response.status, 200);
 
   const html = await response.text();
   assert.match(html, /<title>사전 예매 \| FNL<\/title>/i);
   assert.match(html, /FNL · ADVANCE RESERVATION/);
-  assert.match(html, /사전 예매 준비 중/);
   assert.match(html, /2026년 12월 11일/);
-  assert.doesNotMatch(html, /<iframe/);
+  assert.match(html, /<iframe/);
+  assert.match(html, /1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw\/viewform\?embedded=true/);
+  assert.match(html, /1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw\/viewform\?usp=publish-editor/);
+  assert.doesNotMatch(html, /사전 예매 준비 중/);
 });
 
 test("keeps internal planning material out of the public page", async () => {

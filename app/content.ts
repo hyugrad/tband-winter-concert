@@ -23,8 +23,11 @@ export const event = {
   expectedEnd: "21:30",
   ticketPrice: "5,000원",
   ticketMethods: ["사전 예매", "현장 결제"],
-  reservationStatus: "사전 예매 링크 준비 중",
-  reservationFormUrl: "",
+  reservationStatus: "사전 예매 접수 중",
+  reservationFormUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw/viewform?embedded=true",
+  reservationFormPublicUrl:
+    "https://docs.google.com/forms/d/e/1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw/viewform?usp=publish-editor",
   inquiryChannel: "Instagram DM",
   inquiryStatus: "공식 계정 링크 준비 중",
   venue: "001클럽",
