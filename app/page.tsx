@@ -350,7 +350,13 @@ export default function Home() {
                   <span>BOOKING</span>
                   <strong>{event.ticketMethods.join(" · ")}</strong>
                   <p>사전 예매 방법과 현장 결제 수단은 확정되는 대로 안내합니다.</p>
-                  <small>{event.reservationStatus}</small>
+                  {event.reservationFormUrl ? (
+                    <a className="fnl-booking-button" href={`${basePath}/apply/`}>
+                      사전 예매하기 ↗
+                    </a>
+                  ) : (
+                    <small>{event.reservationStatus}</small>
+                  )}
                 </div>
                 <div>
                   <span>CONTACT</span>

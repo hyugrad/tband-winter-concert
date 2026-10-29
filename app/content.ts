@@ -24,6 +24,7 @@ export const event = {
   ticketPrice: "5,000원",
   ticketMethods: ["사전 예매", "현장 결제"],
   reservationStatus: "사전 예매 링크 준비 중",
+  reservationFormUrl: "",
   inquiryChannel: "Instagram DM",
   inquiryStatus: "공식 계정 링크 준비 중",
   venue: "001클럽",
