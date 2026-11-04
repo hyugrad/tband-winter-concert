@@ -113,6 +113,19 @@ export function ScrollExperience({
     );
 
     sections.forEach((section) => sectionObserver.observe(section));
+
+    let hashFrame = 0;
+    let hashSettleFrame = 0;
+    if (window.location.hash) {
+      hashFrame = window.requestAnimationFrame(() => {
+        hashSettleFrame = window.requestAnimationFrame(() => {
+          document
+            .getElementById(window.location.hash.slice(1))
+            ?.scrollIntoView({ block: "start" });
+        });
+      });
+    }
+
     window.addEventListener("scroll", queueProgressUpdate, { passive: true });
     window.addEventListener("resize", queueProgressUpdate);
     window.addEventListener("pointermove", updatePointerPosition, {
@@ -129,6 +142,8 @@ export function ScrollExperience({
       window.removeEventListener("blur", resetPointerPosition);
       hero?.style.removeProperty("--hero-field-x");
       hero?.style.removeProperty("--hero-field-y");
+      if (hashFrame) window.cancelAnimationFrame(hashFrame);
+      if (hashSettleFrame) window.cancelAnimationFrame(hashSettleFrame);
       if (frame) window.cancelAnimationFrame(frame);
     };
   }, [heroSelector, navSelector]);

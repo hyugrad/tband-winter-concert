@@ -166,7 +166,7 @@ export default function Home() {
               </div>
             </div>
             <div className="timeline-row timeline-row-focus">
-              <time dateTime="2026-12-11T19:00:00+09:00">{event.start}</time>
+              <time dateTime="2026-12-11T19:30:00+09:00">{event.start}</time>
               <div>
                 <strong>LIVE START</strong>
                 <span>본공연 시작</span>

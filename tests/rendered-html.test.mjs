@@ -62,6 +62,8 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /2026\.12\.11 FRI/);
   assert.match(html, /합정 001클럽/);
   assert.match(html, /18:30 입장/);
+  assert.match(html, /19:30/);
+  assert.doesNotMatch(html, /19:00/);
   assert.match(html, />관람 안내</);
   assert.match(html, /공연 시간·셋리스트/);
   assert.match(html, /모바일 빠른 메뉴/);
@@ -124,6 +126,7 @@ test("renders the published reservation form", async () => {
   assert.match(html, /<title>사전 예매 \| FNL<\/title>/i);
   assert.match(html, /FNL · ADVANCE RESERVATION/);
   assert.match(html, /2026년 12월 11일/);
+  assert.match(html, /19:30/);
   assert.match(html, /<iframe/);
   assert.match(html, /1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw\/viewform\?embedded=true/);
   assert.match(html, /1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw\/viewform\?usp=publish-editor/);
