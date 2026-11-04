@@ -14,15 +14,15 @@ export type SetlistGroup = {
 
 export const event = {
   eyebrow: "2026 WINTER JOINT LIVE",
-  title: "2026 NEW RIVER X 24 Hz 합동공연",
+  title: "2026 NEW RIVER X 24Hz 합동공연",
   tagline: "공연에 대한 자세한 이야기는 곧 공개합니다.",
   date: "2026. 12. 11. FRI",
   dateLabel: "2026년 12월 11일 금요일",
-  doors: "18:30",
+  doors: "19:00",
   start: "19:30",
-  expectedEnd: "21:30",
+  expectedEnd: "22:00",
   ticketPrice: "5,000원",
-  ticketMethods: ["사전 예매", "현장 결제"],
+  ticketMethods: ["사전 예매"],
   reservationStatus: "사전 예매 접수 중",
   reservationFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw/viewform?embedded=true",
@@ -34,9 +34,9 @@ export const event = {
   venueSectionTitle: "공연장 안내",
   address: "서울 마포구 서교동 483-15 지하",
   mapUrl:
-    "https://map.naver.com/p/search/%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%84%9C%EA%B5%90%EB%8F%99%20483-15",
+    "https://map.naver.com/p/search/001%ED%81%B4%EB%9F%BD",
   kakaoMapUrl:
-    "https://map.kakao.com/?q=%EC%84%9C%EC%9A%B8%20%EB%A7%88%ED%8F%AC%EA%B5%AC%20%EC%84%9C%EA%B5%90%EB%8F%99%20483-15",
+    "https://map.kakao.com/?q=001%ED%81%B4%EB%9F%BD",
   venueGuideUrl: "https://001club.co.kr/",
 };
 
@@ -52,26 +52,26 @@ export const bands = [
   },
   {
     id: "24hz",
-    name: "24 Hz",
+    name: "24Hz",
     logo: "/assets/logo-24hz.png",
     logoWidth: 160,
     logoHeight: 160,
     description:
-      "서로 다른 주파수를 한 무대의 에너지로 바꾸는 밴드 24 Hz.",
+      "서로 다른 주파수를 한 무대의 에너지로 바꾸는 밴드 24Hz.",
   },
 ];
 
 export const encore = {
   isPublic: false,
   label: "ENCORE",
-  band: "NEW RIVER × 24 Hz",
+  band: "NEW RIVER × 24Hz",
   description: "합동 앙코르곡 · 추후 공개",
 };
 
 export const setlists: SetlistGroup[] = [
   {
     id: "24hz-set-1",
-    band: "24 Hz",
+    band: "24Hz",
     label: "SET 1",
     songs: [
       {
@@ -108,7 +108,7 @@ export const setlists: SetlistGroup[] = [
   },
   {
     id: "24hz-set-2",
-    band: "24 Hz",
+    band: "24Hz",
     label: "SET 2",
     songs: [
       {

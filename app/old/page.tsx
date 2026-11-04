@@ -159,7 +159,7 @@ export default function Home() {
 
           <div className="timeline" aria-label="공연 시간표">
             <div className="timeline-row">
-              <time dateTime="2026-12-11T18:30:00+09:00">{event.doors}</time>
+              <time dateTime="2026-12-11T19:00:00+09:00">{event.doors}</time>
               <div>
                 <strong>DOORS OPEN</strong>
                 <span>입장 시작 예정</span>
@@ -173,7 +173,7 @@ export default function Home() {
               </div>
             </div>
             <div className="timeline-row">
-              <time dateTime="2026-12-11T21:30:00+09:00">
+              <time dateTime="2026-12-11T22:00:00+09:00">
                 {event.expectedEnd}
               </time>
               <div>
