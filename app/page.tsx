@@ -5,13 +5,13 @@ import { ScrollExperience } from "./scroll-experience";
 import { VenueActions } from "./venue-actions";
 
 const calendarTitle = "FNL — Friday Night Live";
-const calendarDescription = "NEW RIVER × 24 Hz 합동공연";
+const calendarDescription = "NEW RIVER × 24Hz 합동공연";
 const calendarLocation = `${event.venue}, ${event.address}`;
 const googleCalendarUrl = `https://calendar.google.com/calendar/render?${new URLSearchParams(
   {
     action: "TEMPLATE",
     text: calendarTitle,
-    dates: "20261211T103000Z/20261211T123000Z",
+    dates: "20261211T103000Z/20261211T130000Z",
     details: calendarDescription,
     location: calendarLocation,
   },
@@ -22,7 +22,7 @@ const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose
     rru: "addevent",
     subject: calendarTitle,
     startdt: "2026-12-11T10:30:00Z",
-    enddt: "2026-12-11T12:30:00Z",
+    enddt: "2026-12-11T13:00:00Z",
     body: calendarDescription,
     location: calendarLocation,
   },
@@ -32,17 +32,12 @@ const faqs = [
   {
     question: "입장 및 신청은 어떻게 하나요?",
     answer:
-      "관람료는 1인 5,000원이며 사전 예매와 현장 결제가 모두 가능합니다. 사전 예매 링크와 현장 결제 수단은 추후 안내합니다.",
-  },
-  {
-    question: "공연 촬영이 가능한가요?",
-    answer:
-      "관객 촬영 범위와 공식 영상 공개 여부를 협의 중입니다. 공연 전 최종 안내를 확인해 주세요.",
+      "사전 예매를 통해 티켓을 구매하실 수 있습니다. 티켓 가격은 전석 5,000원입니다.",
   },
   {
     question: "주차할 수 있나요?",
     answer:
-      "001클럽에는 전용 주차 공간이 없습니다. 합정역 2번 출구에서 도보 약 4분 거리이므로 대중교통 이용을 권장합니다.",
+      "001클럽에는 전용 주차 공간이 없습니다. 근처 공영주차장 또는 메세나폴리스 주차장을 별도로 이용해 주세요. 합정역 2번 출구에서 도보 약 4분 거리이므로 대중교통 이용을 권장합니다.",
   },
   {
     question: "음식물을 가져갈 수 있나요?",
@@ -115,24 +110,14 @@ export default function Home() {
               </h1>
             </div>
 
-            <p className="fnl-hero-cast">NEW RIVER <i>×</i> 24 Hz</p>
+            <p className="fnl-hero-cast">NEW RIVER <i>×</i> 24Hz</p>
             <div className="fnl-hero-meta" aria-label="공연 주요 정보">
               <p>
                 <time dateTime="2026-12-11">2026.12.11 FRI</time>
                 <span aria-hidden="true">·</span>
                 <strong>{event.start}</strong>
               </p>
-              <p>
-                <strong>{`합정 ${event.venue}`}</strong>
-                <span aria-hidden="true">·</span>
-                <strong>{event.ticketPrice}</strong>
-              </p>
-              <small>{`${event.doors} 입장`}</small>
-            </div>
-
-            <div className="fnl-hero-actions">
-              <a href="#ticket">관람 안내</a>
-              <a href="#schedule">공연 시간·셋리스트</a>
+              <strong>{`합정 ${event.venue}`}</strong>
             </div>
           </div>
 
@@ -165,7 +150,7 @@ export default function Home() {
             <div className="fnl-about-copy">
               <h2>Friday Night Live</h2>
               <p>
-                NEW RIVER와 24 Hz가 함께하는 12월의 금요일 밤입니다.
+                NEW RIVER와 24Hz가 함께하는 12월의 금요일 밤입니다.
                 서로 다른 두 밴드의 라이브를 한 자리에서 만나보세요.
               </p>
               <dl className="fnl-date-lockup">
@@ -231,7 +216,7 @@ export default function Home() {
             </div>
             <div className="fnl-schedule-date">
               <time dateTime="2026-12-11">
-                <span>DEC</span>
+                <span>12</span>
                 <strong>11</strong>
                 <em>FRI</em>
               </time>
@@ -250,15 +235,12 @@ export default function Home() {
                 <div className="fnl-calendar-options">
                   <a href={googleCalendarUrl} target="_blank" rel="noreferrer">
                     <strong>Google Calendar</strong>
-                    <span>로그인 후 일정 만들기 ↗</span>
                   </a>
                   <a href={`${basePath}/fnl-2026.ics`} download>
                     <strong>Apple · 기본 캘린더</strong>
-                    <span>일정 파일로 추가하기 ↓</span>
                   </a>
                   <a href={outlookCalendarUrl} target="_blank" rel="noreferrer">
                     <strong>Outlook</strong>
-                    <span>로그인 후 일정 만들기 ↗</span>
                   </a>
                 </div>
               </details>
@@ -341,15 +323,13 @@ export default function Home() {
           <div className="fnl-ticket-grid">
             <div className="fnl-ticket-intro">
               <h2>관람 안내</h2>
-              <strong>{event.ticketPrice}</strong>
-              <span>1인 관람료</span>
             </div>
             <div className="fnl-ticket-column">
               <div className="fnl-ticket-stub">
                 <div>
                   <span>BOOKING</span>
                   <strong>{event.ticketMethods.join(" · ")}</strong>
-                  <p>사전 예매는 신청양식에서 접수하며, 현장 결제는 입장 시 안내합니다.</p>
+                  <p>사전 예매를 통해 티켓을 구매하실 수 있습니다. (티켓 가격: 전석 {event.ticketPrice})</p>
                   {event.reservationFormUrl ? (
                     <a className="fnl-booking-button" href={`${basePath}/apply/`}>
                       사전 예매하기 ↗
@@ -357,12 +337,6 @@ export default function Home() {
                   ) : (
                     <small>{event.reservationStatus}</small>
                   )}
-                </div>
-                <div>
-                  <span>CONTACT</span>
-                  <strong>{event.inquiryChannel}</strong>
-                  <p>공연과 관람에 관한 문의 채널입니다. 계정 링크는 추후 연결됩니다.</p>
-                  <small>{event.inquiryStatus}</small>
                 </div>
               </div>
 
@@ -376,7 +350,7 @@ export default function Home() {
                   <dl>
                     <div>
                       <dt>DATE</dt>
-                      <dd>DEC 11</dd>
+                      <dd>12.11</dd>
                     </div>
                     <div>
                       <dt>SHOW</dt>
@@ -413,13 +387,12 @@ export default function Home() {
                 address={event.address}
                 mapUrl={event.mapUrl}
                 kakaoMapUrl={event.kakaoMapUrl}
-                venueGuideUrl={event.venueGuideUrl}
               />
             </div>
             <dl className="fnl-venue-facts">
               <div><dt>지하철</dt><dd>합정역 2번 출구에서 도보 약 4분</dd></div>
-              <div><dt>주차</dt><dd>전용 주차 공간 없음</dd></div>
-              <div><dt>안내</dt><dd>생수 외 음식물 반입 불가</dd></div>
+              <div><dt>주차</dt><dd>전용 주차 공간 없음, 근처 공영주차장 및 메세나폴리스 주차장 별도 이용 필요</dd></div>
+              <div><dt>안내</dt><dd>생수 외 음식물 반입 불가, 전석 스탠딩</dd></div>
             </dl>
           </div>
         </section>
@@ -458,8 +431,7 @@ export default function Home() {
         />
         <div>
           <strong>FRIDAY NIGHT LIVE</strong>
-          <p>NEW RIVER × 24 Hz · 2026.12.11 · {event.venue}</p>
-          <small>현재 페이지는 공연 준비를 위한 초안이며 일부 내용은 변경될 수 있습니다.</small>
+          <p>NEW RIVER × 24Hz · 2026.12.11 · {event.venue}</p>
         </div>
         <a href="#top">BACK TO TOP ↑</a>
       </footer>

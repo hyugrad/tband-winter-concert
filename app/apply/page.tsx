@@ -36,7 +36,7 @@ export default function ApplyPage() {
           <p className="fnl-overline">FNL · ADVANCE RESERVATION</p>
           <h1 id="apply-title">사전 예매</h1>
           <p>
-            2026년 12월 11일, NEW RIVER와 24 Hz가 함께하는 Friday Night Live의
+            2026년 12월 11일, NEW RIVER와 24Hz가 함께하는 Friday Night Live의
             사전 예매 페이지입니다.
           </p>
           <dl>

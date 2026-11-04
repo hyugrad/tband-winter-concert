@@ -330,15 +330,6 @@
   font-size: 12px;
 }
 
-.fnl-hero-actions {
-  display: flex;
-  margin-top: 24px;
-  flex-wrap: wrap;
-  justify-content: center;
-  gap: 9px;
-}
-
-.fnl-hero-actions a,
 .fnl-venue-actions a,
 .fnl-venue-actions button {
   display: inline-flex;
@@ -365,25 +356,12 @@
   cursor: pointer;
 }
 
-.fnl-hero-actions a:first-child {
-  border-color: var(--fnl-red);
-  background: var(--fnl-red);
-}
-
-.fnl-hero-actions a:hover,
 .fnl-venue-actions a:hover,
 .fnl-venue-actions button:hover {
   transform: translateY(-2px);
   border-color: var(--fnl-gold);
   background: var(--fnl-gold);
   color: var(--fnl-black);
-}
-
-.fnl-hero-actions a:last-child:hover {
-  border-color: rgba(240, 198, 117, 0.78);
-  background: rgba(101, 9, 17, 0.76);
-  color: var(--fnl-ivory);
-  box-shadow: 0 8px 22px rgba(71, 7, 13, 0.34);
 }
 
 .fnl-venue-actions a:first-of-type {
@@ -726,9 +704,9 @@
 }
 
 .fnl-schedule-date dl { margin: 34px 0 0; border-top: 1px solid rgba(242, 231, 208, 0.26); }
-.fnl-schedule-date dl div { display: grid; grid-template-columns: 72px 1fr; gap: 12px; padding: 10px 0; border-bottom: 1px solid rgba(242, 231, 208, 0.16); }
-.fnl-schedule-date dt { color: rgba(242, 231, 208, 0.52); font-family: var(--font-geist-mono), monospace; font-size: 8px; font-weight: 800; letter-spacing: 0.12em; }
-.fnl-schedule-date dd { margin: 0; font-size: 13px; font-weight: 780; }
+.fnl-schedule-date dl div { display: grid; grid-template-columns: 78px 1fr; gap: 12px; padding: 12px 0; border-bottom: 1px solid rgba(242, 231, 208, 0.16); }
+.fnl-schedule-date dt { color: rgba(242, 231, 208, 0.62); font-family: var(--font-geist-mono), monospace; font-size: 10px; font-weight: 850; letter-spacing: 0.12em; }
+.fnl-schedule-date dd { margin: 0; font-size: 18px; font-weight: 800; line-height: 1.15; }
 
 .fnl-calendar-menu { margin-top: 22px; }
 
@@ -773,8 +751,6 @@
   display: flex;
   min-width: 0;
   align-items: center;
-  justify-content: space-between;
-  gap: 12px;
   padding: 12px 13px;
   background: rgba(7, 6, 6, 0.16);
   transition: background-color 180ms ease, color 180ms ease;
@@ -782,8 +758,7 @@
 
 .fnl-calendar-options a + a { border-top: 1px solid rgba(242, 231, 208, 0.16); }
 .fnl-calendar-options a:hover { background: rgba(242, 231, 208, 0.12); }
-.fnl-calendar-options strong { font-size: 11px; }
-.fnl-calendar-options span { color: rgba(242, 231, 208, 0.56); font-family: var(--font-geist-mono), monospace; font-size: 7px; letter-spacing: 0.04em; text-align: right; }
+.fnl-calendar-options strong { font-size: 12px; }
 
 .fnl-bands .fnl-section-heading { margin-bottom: 38px; }
 
@@ -872,7 +847,7 @@
   transform: rotate(1.4deg);
   border: 2px solid rgba(101, 9, 17, 0.58);
   color: rgba(101, 9, 17, 0.68);
-  content: "FNL · DEC 11 · LIVE";
+  content: "FNL · 12.11 · LIVE";
   font-family: var(--font-geist-mono), monospace;
   font-size: 7px;
   font-weight: 850;
@@ -1069,6 +1044,7 @@
 .fnl-venue-title address { margin-top: 16px; color: rgba(242, 231, 208, 0.72); font-size: 16px; font-style: normal; }
 .fnl-venue-actions { display: grid; max-width: 560px; margin-top: 26px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
 .fnl-venue-actions a, .fnl-venue-actions button { min-width: 0; justify-content: flex-start; gap: 11px; padding: 0 14px; text-align: left; }
+.fnl-venue-actions button { grid-column: 1 / -1; }
 .fnl-venue-actions svg { width: 19px; height: 19px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
 .fnl-venue-actions span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .fnl-venue-facts { margin: 0; border-top: 1px solid var(--fnl-line); }
@@ -1102,7 +1078,6 @@
 .fnl-footer > img { width: 68px; height: 52px; object-fit: contain; }
 .fnl-footer strong { font-size: 14px; letter-spacing: 0.06em; }
 .fnl-footer p { margin: 7px 0 0; color: rgba(242, 231, 208, 0.62); font-size: 11px; }
-.fnl-footer small { display: block; margin-top: 7px; color: rgba(242, 231, 208, 0.38); font-size: 9px; }
 .fnl-footer > a { font-family: var(--font-geist-mono), monospace; font-size: 9px; font-weight: 800; letter-spacing: 0.12em; }
 
 @keyframes fnl-curtain-left {
@@ -1202,7 +1177,7 @@
   .fnl-footer > img { width: 50px; height: 42px; }
   .fnl-footer > a { grid-column: 1 / -1; }
   .fnl-page { padding-bottom: calc(74px + env(safe-area-inset-bottom)); }
-  .fnl-scroll-cue { display: none; }
+  .fnl-scroll-cue { bottom: 14px; display: flex; }
   .fnl-mobile-actions {
     position: fixed;
     z-index: 77;
@@ -1242,8 +1217,6 @@
 }
 
 @media (max-width: 390px) {
-  .fnl-hero-actions { margin-top: 18px; }
-  .fnl-hero-actions a { min-height: 44px; padding: 0 13px; font-size: 12px; }
   .fnl-scroll-cue { font-size: 7px; }
   .fnl-date-lockup { grid-template-columns: 1fr; }
   .fnl-date-lockup div + div { border-top: 1px solid rgba(242, 231, 208, 0.18); border-left: 0; padding-left: 0; }
