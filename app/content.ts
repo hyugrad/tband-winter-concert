@@ -19,7 +19,7 @@ export const event = {
   date: "2026. 12. 11. FRI",
   dateLabel: "2026년 12월 11일 금요일",
   doors: "18:30",
-  start: "19:00",
+  start: "19:30",
   expectedEnd: "21:30",
   ticketPrice: "5,000원",
   ticketMethods: ["사전 예매", "현장 결제"],

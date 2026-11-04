@@ -11,7 +11,7 @@ const googleCalendarUrl = `https://calendar.google.com/calendar/render?${new URL
   {
     action: "TEMPLATE",
     text: calendarTitle,
-    dates: "20261211T100000Z/20261211T123000Z",
+    dates: "20261211T103000Z/20261211T123000Z",
     details: calendarDescription,
     location: calendarLocation,
   },
@@ -21,7 +21,7 @@ const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose
     path: "/calendar/action/compose",
     rru: "addevent",
     subject: calendarTitle,
-    startdt: "2026-12-11T10:00:00Z",
+    startdt: "2026-12-11T10:30:00Z",
     enddt: "2026-12-11T12:30:00Z",
     body: calendarDescription,
     location: calendarLocation,
@@ -227,7 +227,7 @@ export default function Home() {
           <div className="fnl-schedule-board">
             <div className="fnl-schedule-clock">
               <p>LIVE 시작까지</p>
-              <EventCountdown target="2026-12-11T19:00:00+09:00" />
+              <EventCountdown target="2026-12-11T19:30:00+09:00" />
             </div>
             <div className="fnl-schedule-date">
               <time dateTime="2026-12-11">
