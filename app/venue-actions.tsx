@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useEffect, useState } from "react";
 
 type VenueActionsProps = {
   displayAddress: string;
@@ -35,7 +35,16 @@ export function VenueActions({
 }: VenueActionsProps) {
   const [copyState, setCopyState] = useState<"idle" | "copied" | "failed">("idle");
 
+  useEffect(() => {
+    if (copyState === "idle") return;
+
+    const timeoutId = window.setTimeout(() => setCopyState("idle"), 1800);
+    return () => window.clearTimeout(timeoutId);
+  }, [copyState]);
+
   const handleCopyAddress = async () => {
+    setCopyState("idle");
+
     try {
       await navigator.clipboard.writeText(copyAddress);
       setCopyState("copied");
@@ -46,7 +55,7 @@ export function VenueActions({
 
   const copyLabel =
     copyState === "copied"
-      ? "주소가 복사되었습니다"
+      ? "클립보드에 저장되었습니다"
       : copyState === "failed"
         ? "주소를 직접 선택해 주세요"
         : "주소 복사";
@@ -58,7 +67,6 @@ export function VenueActions({
           type="button"
           onClick={handleCopyAddress}
           aria-label={`${displayAddress}, ${copyLabel}`}
-          aria-live="polite"
           data-copy-state={copyState}
           title={copyLabel}
         >
@@ -66,6 +74,19 @@ export function VenueActions({
           <ActionIcon type="copy" />
         </button>
       </address>
+      <div
+        className="fnl-copy-toast"
+        data-visible={copyState !== "idle"}
+        role="status"
+        aria-live="polite"
+        aria-atomic="true"
+      >
+        {copyState === "copied"
+          ? "클립보드에 저장되었습니다"
+          : copyState === "failed"
+            ? "주소를 복사하지 못했습니다"
+            : ""}
+      </div>
       <div className="fnl-venue-actions">
         <a href={mapUrl} target="_blank" rel="noreferrer">
           <ActionIcon type="map" />
