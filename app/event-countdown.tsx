@@ -55,11 +55,15 @@ export function EventCountdown({ target }: CountdownProps) {
   }
 
   const units = [
-    ["DAYS", values.days],
-    ["HOURS", values.hours],
-    ["MIN", values.minutes],
-    ["SEC", values.seconds],
+    ["시간", values.hours],
+    ["분", values.minutes],
+    ["초", values.seconds],
   ] as const;
+  const dayLabel = remaining
+    ? values.days === 0
+      ? "D-DAY"
+      : `D-${values.days}`
+    : "D-—";
 
   return (
     <div
@@ -67,12 +71,18 @@ export function EventCountdown({ target }: CountdownProps) {
       role="timer"
       aria-label={`공연 시작까지 ${values.days}일 ${values.hours}시간 ${values.minutes}분 ${values.seconds}초`}
     >
-      {units.map(([label, value]) => (
-        <span key={label}>
-          <strong>{remaining ? String(value).padStart(2, "0") : "--"}</strong>
-          <small>{label}</small>
-        </span>
-      ))}
+      <span className="fnl-countdown-day">
+        <small>공연 시작까지</small>
+        <strong>{dayLabel}</strong>
+      </span>
+      <span className="fnl-countdown-detail">
+        {units.map(([label, value]) => (
+          <span key={label}>
+            <strong>{remaining ? String(value).padStart(2, "0") : "--"}</strong>
+            <small>{label}</small>
+          </span>
+        ))}
+      </span>
     </div>
   );
 }

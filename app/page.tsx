@@ -4,30 +4,6 @@ import { EventCountdown } from "./event-countdown";
 import { ScrollExperience } from "./scroll-experience";
 import { VenueActions } from "./venue-actions";
 
-const calendarTitle = "FNL — Friday Night Live";
-const calendarDescription = "NEW RIVER × 24Hz 합동공연";
-const calendarLocation = `${event.venue}, ${event.address}`;
-const googleCalendarUrl = `https://calendar.google.com/calendar/render?${new URLSearchParams(
-  {
-    action: "TEMPLATE",
-    text: calendarTitle,
-    dates: "20261211T103000Z/20261211T130000Z",
-    details: calendarDescription,
-    location: calendarLocation,
-  },
-).toString()}`;
-const outlookCalendarUrl = `https://outlook.live.com/calendar/0/deeplink/compose?${new URLSearchParams(
-  {
-    path: "/calendar/action/compose",
-    rru: "addevent",
-    subject: calendarTitle,
-    startdt: "2026-12-11T10:30:00Z",
-    enddt: "2026-12-11T13:00:00Z",
-    body: calendarDescription,
-    location: calendarLocation,
-  },
-).toString()}`;
-
 const faqs = [
   {
     question: "입장 및 신청은 어떻게 하나요?",
@@ -78,12 +54,6 @@ export default function Home() {
         </nav>
       </header>
       <ScrollExperience heroSelector=".fnl-hero" navSelector=".fnl-nav" />
-      <nav className="fnl-mobile-actions" aria-label="모바일 빠른 메뉴">
-        <a href="#ticket">관람 안내</a>
-        <a href={event.mapUrl} target="_blank" rel="noreferrer">
-          001클럽 길찾기 ↗
-        </a>
-      </nav>
 
       <main id="main" tabIndex={-1}>
         <section className="fnl-hero" id="top" aria-labelledby="fnl-hero-title">
@@ -119,6 +89,14 @@ export default function Home() {
               </p>
               <strong>{`합정 ${event.venue}`}</strong>
             </div>
+            <nav className="fnl-hero-shortcuts" aria-label="공연 바로가기">
+              {event.isReservationOpen && event.reservationFormUrl && (
+                <a className="fnl-hero-booking" href={`${basePath}/apply/`}>
+                  사전 예매
+                </a>
+              )}
+              <a href="#setlist">셋리스트 보기</a>
+            </nav>
           </div>
 
           <div className="fnl-curtain fnl-curtain-left" aria-hidden="true">
@@ -128,7 +106,8 @@ export default function Home() {
             <span />
           </div>
           <a className="fnl-scroll-cue" href="#about" aria-label="공연 소개로 이동">
-            <span>SCROLL FOR TONIGHT&apos;S SHOW</span>
+            <span>Scroll</span>
+            <small>아래로 스크롤해 보세요</small>
             <i aria-hidden="true" />
           </a>
         </section>
@@ -211,7 +190,6 @@ export default function Home() {
           </div>
           <div className="fnl-schedule-board">
             <div className="fnl-schedule-clock">
-              <p>LIVE 시작까지</p>
               <EventCountdown target="2026-12-11T19:30:00+09:00" />
             </div>
             <div className="fnl-schedule-date">
@@ -226,24 +204,6 @@ export default function Home() {
                 <div><dt>END</dt><dd>{event.expectedEnd}</dd></div>
                 <div><dt>VENUE</dt><dd>{event.venue}</dd></div>
               </dl>
-              <details className="fnl-calendar-menu">
-                <summary>
-                  <span aria-hidden="true">＋</span>
-                  캘린더에 추가
-                  <i aria-hidden="true" />
-                </summary>
-                <div className="fnl-calendar-options">
-                  <a href={googleCalendarUrl} target="_blank" rel="noreferrer">
-                    <strong>Google Calendar</strong>
-                  </a>
-                  <a href={`${basePath}/fnl-2026.ics`} download>
-                    <strong>Apple · 기본 캘린더</strong>
-                  </a>
-                  <a href={outlookCalendarUrl} target="_blank" rel="noreferrer">
-                    <strong>Outlook</strong>
-                  </a>
-                </div>
-              </details>
             </div>
           </div>
         </section>
