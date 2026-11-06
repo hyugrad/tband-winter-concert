@@ -58,10 +58,10 @@ export const bands = [
       "물결처럼 흐르는 멜로디와 선명한 밴드 사운드를 들려주는 NEW RIVER.",
     members: [
       { role: "VOCAL", names: "강예진 · 고은산" },
-      { role: "GUITAR", names: "신유경", note: "일부 곡 · 강예진" },
+      { role: "GUITAR", names: "신유경", note: "SUB 강예진" },
       { role: "BASS", names: "김원준" },
       { role: "DRUMS", names: "유지원" },
-      { role: "KEYBOARD", names: "조혜수", note: "일부 곡 · 강예진" },
+      { role: "KEYBOARD", names: "조혜수", note: "SUB 강예진" },
       { role: "VIOLIN", names: "박성은" },
     ] satisfies BandMemberGroup[],
   },

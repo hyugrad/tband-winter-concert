@@ -63,8 +63,8 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /윤서희 · 윤성식 · 이다연 · 정재윤/);
   assert.match(html, /김유진 · 김윤서 · 박하연 · 정서이/);
   assert.match(html, /김태연 · 문정현/);
-  assert.match(html, /일부 곡 · 강예진/);
-  assert.doesNotMatch(html, /서브 · 강예진|\(일부 곡 · 강예진\)/);
+  assert.match(html, /SUB 강예진/);
+  assert.doesNotMatch(html, /일부 곡|서브 · 강예진|\(SUB 강예진\)/);
   assert.match(html, /박성은/);
   assert.doesNotMatch(html, /멤버 소개 · 추후 공개/);
   assert.match(html, /2026\. 12\. 11\. FRI/);
