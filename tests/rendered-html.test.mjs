@@ -28,7 +28,9 @@ test("server-renders the FNL concert page", async () => {
   assert.match(response.headers.get("content-type") ?? "", /^text\/html\b/i);
 
   const html = await response.text();
-  assert.match(html, /<html lang="ko">/i);
+  assert.match(html, /<html lang="ko"[^>]*>/i);
+  assert.match(html, /<html[^>]*background-color:#070606/i);
+  assert.doesNotMatch(html, /loading="lazy"/);
   assert.match(html, /<title>FNL — Friday Night Live<\/title>/i);
   assert.match(html, /FRIDAY NIGHT LIVE/);
   assert.match(html, /property="og:image" content="[^"]*\/og\.png\?v=20261021-fnl-r2"/);
@@ -102,6 +104,9 @@ test("server-renders the FNL concert page", async () => {
   assert.doesNotMatch(html, /현장 결제|Instagram DM/);
   assert.match(html, /주차할 수 있나요\?/);
   assert.match(html, /메세나폴리스 주차장/);
+  assert.match(html, /공연을 보려면 몇 시까지 가야 하나요\?/);
+  assert.match(html, /오후 7시부터 7시 30분 사이에 입장해 주세요/);
+  assert.match(html, /예매 확인은 입구에서 도와드리겠습니다/);
   assert.doesNotMatch(html, /공연 촬영이 가능한가요\?/);
   assert.match(html, /네이버 길찾기/);
   assert.match(html, />카카오맵</);

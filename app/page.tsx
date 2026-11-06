@@ -22,6 +22,12 @@ const faqs = [
     answer: "공연장 안내에 따라 생수를 제외한 음식물은 반입할 수 없습니다.",
     reservationLink: false,
   },
+  {
+    question: "공연을 보려면 몇 시까지 가야 하나요?",
+    answer:
+      "입장은 오후 7시부터 가능합니다. 공연은 오후 7시 30분에 시작하므로 오후 7시부터 7시 30분 사이에 입장해 주세요. 예매 확인은 입구에서 도와드리겠습니다.",
+    reservationLink: false,
+  },
 ];
 
 export default function Home() {
@@ -119,7 +125,8 @@ export default function Home() {
               alt=""
               width="1100"
               height="1000"
-              loading="lazy"
+              loading="eager"
+              decoding="async"
             />
             <div className="fnl-about-copy">
               <h2>Friday Night Live</h2>
@@ -163,7 +170,7 @@ export default function Home() {
                     alt={`${band.name} 로고`}
                     width={band.logoWidth}
                     height={band.logoHeight}
-                    loading="lazy"
+                    loading="eager"
                     decoding="async"
                     className={`fnl-band-logo fnl-band-logo-${band.id}`}
                   />
