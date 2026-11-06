@@ -66,9 +66,8 @@ test("server-renders the FNL concert page", async () => {
   assert.doesNotMatch(html, /공연 시간·셋리스트/);
   assert.match(html, />Scroll</);
   assert.match(html, /아래로 스크롤해 보세요/);
-  assert.match(html, /공연 바로가기/);
-  assert.match(html, />사전 예매</);
-  assert.match(html, /셋리스트 보기/);
+  assert.doesNotMatch(html, /fnl-hero-shortcuts|공연 바로가기|셋리스트 보기/);
+  assert.match(html, /<strong>12\/11<\/strong>\s*<em>FRI<\/em>/);
   assert.doesNotMatch(html, /모바일 빠른 메뉴|001클럽 길찾기 ↗/);
   assert.match(html, /PLACE &amp; ACCESS/);
   assert.match(html, /장소 안내/);

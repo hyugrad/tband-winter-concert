@@ -89,14 +89,6 @@ export default function Home() {
               </p>
               <strong>{`합정 ${event.venue}`}</strong>
             </div>
-            <nav className="fnl-hero-shortcuts" aria-label="공연 바로가기">
-              {event.isReservationOpen && event.reservationFormUrl && (
-                <a className="fnl-hero-booking" href={`${basePath}/apply/`}>
-                  사전 예매
-                </a>
-              )}
-              <a href="#setlist">셋리스트 보기</a>
-            </nav>
           </div>
 
           <div className="fnl-curtain fnl-curtain-left" aria-hidden="true">
@@ -194,8 +186,7 @@ export default function Home() {
             </div>
             <div className="fnl-schedule-date">
               <time dateTime="2026-12-11">
-                <span>12</span>
-                <strong>11</strong>
+                <strong>12/11</strong>
                 <em>FRI</em>
               </time>
               <dl>
