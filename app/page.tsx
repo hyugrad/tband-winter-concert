@@ -178,7 +178,20 @@ export default function Home() {
                 <div className="fnl-band-card-copy">
                   <h3>{band.name}</h3>
                   <p>{band.description}</p>
-                  <span>멤버 소개 · 추후 공개</span>
+                  <details className="fnl-band-members">
+                    <summary>멤버 소개</summary>
+                    <dl>
+                      {band.members.map((member) => (
+                        <div key={`${band.id}-${member.role}`}>
+                          <dt>{member.role}</dt>
+                          <dd>
+                            {member.names}
+                            {member.note && <small>({member.note})</small>}
+                          </dd>
+                        </div>
+                      ))}
+                    </dl>
+                  </details>
                 </div>
               </article>
             ))}

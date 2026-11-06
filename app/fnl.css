@@ -751,6 +751,7 @@
   display: grid;
   grid-template-columns: repeat(2, minmax(0, 1fr));
   gap: 16px;
+  align-items: start;
 }
 
 .fnl-band-card {
@@ -778,7 +779,41 @@
 .fnl-band-card-copy { padding: 26px; border-top: 1px solid var(--fnl-line); }
 .fnl-band-card-copy h3 { margin: 0; font-size: clamp(1.8rem, 4vw, 3.4rem); letter-spacing: -0.055em; }
 .fnl-band-card-copy p { min-height: 3.2em; margin: 13px 0 20px; color: rgba(242, 231, 208, 0.7); font-size: 15px; line-height: 1.7; word-break: keep-all; }
-.fnl-band-card-copy > span { display: inline-flex; padding: 7px 10px; background: var(--fnl-red-dark); color: var(--fnl-ivory); font-family: var(--font-geist-mono), monospace; font-size: 9px; letter-spacing: 0.08em; }
+
+.fnl-band-members { border-top: 1px solid var(--fnl-line); }
+.fnl-band-members > summary {
+  display: flex;
+  min-height: 44px;
+  align-items: center;
+  justify-content: space-between;
+  color: var(--fnl-ivory);
+  cursor: pointer;
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 10px;
+  font-weight: 800;
+  letter-spacing: 0.12em;
+  list-style: none;
+}
+.fnl-band-members > summary::-webkit-details-marker { display: none; }
+.fnl-band-members > summary::after { color: var(--fnl-red); content: "+"; font-size: 19px; line-height: 1; }
+.fnl-band-members[open] > summary::after { content: "−"; }
+.fnl-band-members dl { margin: 0; border-top: 1px solid rgba(242, 231, 208, 0.12); }
+.fnl-band-members dl > div {
+  display: grid;
+  grid-template-columns: 86px minmax(0, 1fr);
+  gap: 12px;
+  padding: 11px 0;
+  border-bottom: 1px solid rgba(242, 231, 208, 0.1);
+}
+.fnl-band-members dt {
+  color: var(--fnl-red);
+  font-family: var(--font-geist-mono), monospace;
+  font-size: 9px;
+  font-weight: 850;
+  letter-spacing: 0.1em;
+}
+.fnl-band-members dd { margin: 0; color: var(--fnl-ivory); font-size: 13px; font-weight: 720; line-height: 1.5; word-break: keep-all; }
+.fnl-band-members dd small { display: block; margin-top: 2px; color: rgba(242, 231, 208, 0.52); font-size: 10px; font-weight: 500; }
 
 .fnl-rundown {
   background:
