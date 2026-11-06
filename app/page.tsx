@@ -9,15 +9,18 @@ const faqs = [
     question: "입장 및 신청은 어떻게 하나요?",
     answer:
       "사전 예매를 통해 티켓을 구매하실 수 있습니다. 티켓 가격은 전석 5,000원입니다.",
+    reservationLink: true,
   },
   {
     question: "주차할 수 있나요?",
     answer:
       "001클럽에는 전용 주차 공간이 없습니다. 근처 공영주차장 또는 메세나폴리스 주차장을 별도로 이용해 주세요. 합정역 2번 출구에서 도보 약 4분 거리이므로 대중교통 이용을 권장합니다.",
+    reservationLink: false,
   },
   {
     question: "음식물을 가져갈 수 있나요?",
     answer: "공연장 안내에 따라 생수를 제외한 음식물은 반입할 수 없습니다.",
+    reservationLink: false,
   },
 ];
 
@@ -333,9 +336,9 @@ export default function Home() {
               <p>공연장</p>
               <h2>장소 안내</h2>
               <strong className="fnl-venue-name">{event.venue}</strong>
-              <address>{event.address}</address>
               <VenueActions
-                address={event.address}
+                displayAddress={event.address}
+                copyAddress={event.copyAddress}
                 mapUrl={event.mapUrl}
                 kakaoMapUrl={event.kakaoMapUrl}
               />
@@ -365,7 +368,12 @@ export default function Home() {
                   <strong>{faq.question}</strong>
                   <i aria-hidden="true" />
                 </summary>
-                <p>{faq.answer}</p>
+                <p>
+                  {faq.answer}{" "}
+                  {faq.reservationLink && (
+                    <a href={`${basePath}/apply/`}>사전 예매하기 →</a>
+                  )}
+                </p>
               </details>
             ))}
           </div>

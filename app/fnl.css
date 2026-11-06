@@ -26,6 +26,7 @@
 }
 
 .fnl-page a:focus-visible,
+.fnl-page button:focus-visible,
 .fnl-page summary:focus-visible {
   outline: 2px solid var(--fnl-gold);
   outline-offset: 4px;
@@ -1025,10 +1026,14 @@
 .fnl-venue-title > p { margin: 0 0 13px; color: var(--fnl-gold); font-family: var(--font-geist-mono), monospace; font-size: 10px; letter-spacing: 0.12em; }
 .fnl-venue-title h2 { font-size: clamp(2.3rem, 5vw, 4.2rem); }
 .fnl-venue-name { display: block; margin-top: 28px; color: var(--fnl-ivory); font-size: clamp(1.9rem, 4vw, 3.4rem); font-weight: 830; letter-spacing: -0.06em; line-height: 1; }
-.fnl-venue-title address { margin-top: 16px; color: rgba(242, 231, 208, 0.72); font-size: 16px; font-style: normal; }
+.fnl-venue-address { margin-top: 16px; font-style: normal; }
+.fnl-venue-address button { display: inline-flex; min-height: 32px; align-items: center; gap: 7px; border: 0; padding: 0; background: transparent; color: rgba(242, 231, 208, 0.72); cursor: pointer; font: inherit; font-size: 16px; text-align: left; }
+.fnl-venue-address span { border-bottom: 1px dashed rgba(242, 231, 208, 0.34); padding-bottom: 2px; }
+.fnl-venue-address svg { width: 15px; height: 15px; flex: 0 0 auto; fill: none; opacity: 0.66; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.7; transition: color 160ms ease, opacity 160ms ease; }
+.fnl-venue-address button:hover { color: var(--fnl-ivory); }
+.fnl-venue-address button:hover svg, .fnl-venue-address button[data-copy-state="copied"] svg { color: var(--fnl-gold); opacity: 1; }
 .fnl-venue-actions { display: grid; max-width: 560px; margin-top: 26px; grid-template-columns: repeat(2, minmax(0, 1fr)); gap: 8px; }
-.fnl-venue-actions a, .fnl-venue-actions button { min-width: 0; justify-content: flex-start; gap: 11px; padding: 0 14px; text-align: left; }
-.fnl-venue-actions button { grid-column: 1 / -1; }
+.fnl-venue-actions a { min-width: 0; justify-content: flex-start; gap: 11px; padding: 0 14px; text-align: left; }
 .fnl-venue-actions svg { width: 19px; height: 19px; flex: 0 0 auto; fill: none; stroke: currentColor; stroke-linecap: round; stroke-linejoin: round; stroke-width: 1.8; }
 .fnl-venue-actions span { overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
 .fnl-venue-facts { margin: 0; border-top: 1px solid var(--fnl-line); }
@@ -1048,6 +1053,7 @@
 .fnl-faq-list summary i::after { transform: translate(-50%, -50%) rotate(90deg); transition: transform 160ms ease; }
 .fnl-faq-list details[open] summary i::after { transform: translate(-50%, -50%); }
 .fnl-faq-list details > p { max-width: 760px; margin: -2px 34px 24px 46px; color: rgba(21, 17, 18, 0.7); font-size: 15px; line-height: 1.75; word-break: keep-all; }
+.fnl-faq-list details > p a { border-bottom: 1px solid rgba(101, 9, 17, 0.42); color: var(--fnl-red-dark); font-weight: 800; }
 
 .fnl-footer {
   display: grid;
@@ -1165,7 +1171,7 @@
   .fnl-ticket-intro > strong { margin-top: 24px; }
   .fnl-admit-ticket { width: min(86%, 320px); margin-top: -10px; }
   .fnl-venue-grid { gap: 42px; }
-  .fnl-venue-actions a, .fnl-venue-actions button { min-height: 52px; font-size: 12px; }
+  .fnl-venue-actions a { min-height: 52px; font-size: 12px; }
   .fnl-footer { grid-template-columns: 52px 1fr; padding: 32px 18px; }
   .fnl-footer > img { width: 50px; height: 42px; }
   .fnl-footer > a { grid-column: 1 / -1; }
