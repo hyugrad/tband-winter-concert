@@ -23,7 +23,6 @@ export const event = {
   expectedEnd: "22:00",
   ticketPrice: "5,000원",
   ticketMethods: ["사전 예매"],
-  isReservationOpen: true,
   reservationStatus: "사전 예매 접수 중",
   reservationFormUrl:
     "https://docs.google.com/forms/d/e/1FAIpQLSchuCAh2lGGgi6RNGbz0jEI2j6I0VKZ6fU70epuw_kMW4QgOw/viewform?embedded=true",
