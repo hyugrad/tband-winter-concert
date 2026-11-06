@@ -30,6 +30,7 @@ test("server-renders the FNL concert page", async () => {
   const html = await response.text();
   assert.match(html, /<html lang="ko"[^>]*>/i);
   assert.match(html, /<html[^>]*background-color:#070606/i);
+  assert.match(html, /pretendardvariable-dynamic-subset\.min\.css/);
   assert.doesNotMatch(html, /loading="lazy"/);
   assert.match(html, /<title>FNL — Friday Night Live<\/title>/i);
   assert.match(html, /FRIDAY NIGHT LIVE/);
@@ -59,8 +60,11 @@ test("server-renders the FNL concert page", async () => {
   assert.equal((html.match(/class="fnl-band-members"/g) ?? []).length, 2);
   assert.match(html, />멤버 소개<\/summary>/);
   assert.match(html, /강예진 · 고은산/);
-  assert.match(html, /윤서희 · 정재윤 · 이다연 · 윤성식/);
-  assert.match(html, /서브 · 강예진/);
+  assert.match(html, /윤서희 · 윤성식 · 이다연 · 정재윤/);
+  assert.match(html, /김유진 · 김윤서 · 박하연 · 정서이/);
+  assert.match(html, /김태연 · 문정현/);
+  assert.match(html, /일부 곡 · 강예진/);
+  assert.doesNotMatch(html, /서브 · 강예진|\(일부 곡 · 강예진\)/);
   assert.match(html, /박성은/);
   assert.doesNotMatch(html, /멤버 소개 · 추후 공개/);
   assert.match(html, /2026\. 12\. 11\. FRI/);

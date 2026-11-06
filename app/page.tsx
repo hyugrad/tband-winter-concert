@@ -186,7 +186,7 @@ export default function Home() {
                           <dt>{member.role}</dt>
                           <dd>
                             {member.names}
-                            {member.note && <small>({member.note})</small>}
+                            {member.note && <small>{member.note}</small>}
                           </dd>
                         </div>
                       ))}

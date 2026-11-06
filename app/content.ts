@@ -58,10 +58,10 @@ export const bands = [
       "물결처럼 흐르는 멜로디와 선명한 밴드 사운드를 들려주는 NEW RIVER.",
     members: [
       { role: "VOCAL", names: "강예진 · 고은산" },
-      { role: "GUITAR", names: "신유경", note: "서브 · 강예진" },
+      { role: "GUITAR", names: "신유경", note: "일부 곡 · 강예진" },
       { role: "BASS", names: "김원준" },
       { role: "DRUMS", names: "유지원" },
-      { role: "KEYBOARD", names: "조혜수", note: "서브 · 강예진" },
+      { role: "KEYBOARD", names: "조혜수", note: "일부 곡 · 강예진" },
       { role: "VIOLIN", names: "박성은" },
     ] satisfies BandMemberGroup[],
   },
@@ -74,10 +74,10 @@ export const bands = [
     description:
       "서로 다른 주파수를 한 무대의 에너지로 바꾸는 밴드 24Hz.",
     members: [
-      { role: "VOCAL", names: "윤서희 · 정재윤 · 이다연 · 윤성식" },
-      { role: "GUITAR", names: "박하연 · 김유진 · 김윤서 · 정서이" },
+      { role: "VOCAL", names: "윤서희 · 윤성식 · 이다연 · 정재윤" },
+      { role: "GUITAR", names: "김유진 · 김윤서 · 박하연 · 정서이" },
       { role: "BASS", names: "김현서 · 박종현" },
-      { role: "DRUMS", names: "문정현 · 김태연" },
+      { role: "DRUMS", names: "김태연 · 문정현" },
       { role: "KEYBOARD", names: "김도윤 · 박재은" },
     ] satisfies BandMemberGroup[],
   },
