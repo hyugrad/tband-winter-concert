@@ -106,7 +106,10 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /네이버 길찾기/);
   assert.match(html, />카카오맵</);
   assert.doesNotMatch(html, /장소 안내 보기/);
-  assert.match(html, /주소 복사/);
+  assert.doesNotMatch(html, />주소 복사</);
+  assert.match(html, /서울 마포구 서교동 483-15 지하/);
+  assert.match(html, /사전 예매하기 →/);
+  assert.match(html, /href="(?:\/tband-winter-concert)?\/apply\/"/);
   assert.match(html, /map\.naver\.com\/p\/search\/001%ED%81%B4%EB%9F%BD/);
   assert.match(html, /생수 외 음식물 반입 불가, 전석 스탠딩/);
   assert.doesNotMatch(html, /현재 페이지는 공연 준비를 위한 초안/);

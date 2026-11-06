@@ -33,6 +33,7 @@ export const event = {
   venue: "001클럽",
   venueSectionTitle: "공연장 안내",
   address: "서울 마포구 서교동 483-15 지하",
+  copyAddress: "서울 마포구 서교동 483-15",
   mapUrl:
     "https://map.naver.com/p/search/001%ED%81%B4%EB%9F%BD",
   kakaoMapUrl:

@@ -3,7 +3,8 @@
 import { useState } from "react";
 
 type VenueActionsProps = {
-  address: string;
+  displayAddress: string;
+  copyAddress: string;
   mapUrl: string;
   kakaoMapUrl: string;
 };
@@ -27,15 +28,16 @@ function ActionIcon({ type }: { type: "map" | "copy" }) {
 }
 
 export function VenueActions({
-  address,
+  displayAddress,
+  copyAddress,
   mapUrl,
   kakaoMapUrl,
 }: VenueActionsProps) {
   const [copyState, setCopyState] = useState<"idle" | "copied" | "failed">("idle");
 
-  const copyAddress = async () => {
+  const handleCopyAddress = async () => {
     try {
-      await navigator.clipboard.writeText(address);
+      await navigator.clipboard.writeText(copyAddress);
       setCopyState("copied");
     } catch {
       setCopyState("failed");
@@ -44,25 +46,36 @@ export function VenueActions({
 
   const copyLabel =
     copyState === "copied"
-      ? "주소 복사됨 ✓"
+      ? "주소가 복사되었습니다"
       : copyState === "failed"
         ? "주소를 직접 선택해 주세요"
         : "주소 복사";
 
   return (
-    <div className="fnl-venue-actions">
-      <a href={mapUrl} target="_blank" rel="noreferrer">
-        <ActionIcon type="map" />
-        <span>네이버 길찾기</span>
-      </a>
-      <a href={kakaoMapUrl} target="_blank" rel="noreferrer">
-        <ActionIcon type="map" />
-        <span>카카오맵</span>
-      </a>
-      <button type="button" onClick={copyAddress} aria-live="polite">
-        <ActionIcon type="copy" />
-        <span>{copyLabel}</span>
-      </button>
-    </div>
+    <>
+      <address className="fnl-venue-address">
+        <button
+          type="button"
+          onClick={handleCopyAddress}
+          aria-label={`${displayAddress}, ${copyLabel}`}
+          aria-live="polite"
+          data-copy-state={copyState}
+          title={copyLabel}
+        >
+          <span>{displayAddress}</span>
+          <ActionIcon type="copy" />
+        </button>
+      </address>
+      <div className="fnl-venue-actions">
+        <a href={mapUrl} target="_blank" rel="noreferrer">
+          <ActionIcon type="map" />
+          <span>네이버 길찾기</span>
+        </a>
+        <a href={kakaoMapUrl} target="_blank" rel="noreferrer">
+          <ActionIcon type="map" />
+          <span>카카오맵</span>
+        </a>
+      </div>
+    </>
   );
 }
