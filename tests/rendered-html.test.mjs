@@ -39,8 +39,8 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /assets\/fnl\/stage\.webp/);
   assert.doesNotMatch(html, /assets\/fnl\/city-night\.webp/);
   assert.match(html, /fnl-curtain-left/);
-  assert.match(html, /data-text="FRIDAY"/);
-  assert.equal((html.match(/class="fnl-title-divider"/g) ?? []).length, 2);
+  assert.match(html, /assets\/fnl\/hero-logo\.webp/);
+  assert.doesNotMatch(html, /data-text="FRIDAY"|fnl-title-divider/);
   assert.doesNotMatch(html, /ONE NIGHT ONLY · 2026|>PRESENTS<|LIVE MUSIC · SEOUL/);
   assert.match(html, /class="fnl-schedule-board"/);
   assert.match(html, /공연 시작까지/);
@@ -49,10 +49,15 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /assets\/fnl\/logo-red\.webp/);
   assert.doesNotMatch(html, /캘린더에 추가|Google Calendar|Apple · 기본 캘린더|Outlook/);
   assert.match(html, /fnl-admit-ticket/);
+  assert.match(html, /assets\/fnl\/ticket-final\.webp/);
   assert.equal((html.match(/class="fnl-program-sheet(?: fnl-faq-sheet)?"/g) ?? []).length, 2);
-  assert.match(html, />FNL<\/span>\s*<span>TICKET<\/span>/);
+  assert.doesNotMatch(html, /fnl-admit-title|fnl-admit-stub/);
   assert.match(html, /Friday Night Live/);
   assert.match(html, /NEW RIVER와 24Hz가 함께하는 12월의 금요일 밤입니다/);
+  assert.match(html, /첫 눈에 널 사랑할 수는 없었을까/);
+  assert.match(html, /캔트비블루/);
+  assert.match(html, /https:\/\/www\.youtube\.com\/watch\?v=z9Vh2z89A2Y/);
+  assert.doesNotMatch(html, /NO PAIN|실리카겔|JaIMSzE5yLA/);
   assert.doesNotMatch(html, /설명 추후 입력|공연설명 타이틀|설명 위치/);
   assert.doesNotMatch(html, />가안</);
   assert.match(html, /LINE UP/);

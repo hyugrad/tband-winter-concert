@@ -117,9 +117,9 @@ export const setlists: SetlistGroup[] = [
         youtube: "https://www.youtube.com/watch?v=xY6Vf3dLHZ0",
       },
       {
-        title: "NO PAIN",
-        artist: "실리카겔",
-        youtube: "https://www.youtube.com/watch?v=JaIMSzE5yLA",
+        title: "첫 눈에 널 사랑할 수는 없었을까",
+        artist: "캔트비블루",
+        youtube: "https://www.youtube.com/watch?v=z9Vh2z89A2Y",
       },
       {
         title: "TOMBOY",

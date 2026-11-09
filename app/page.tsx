@@ -81,11 +81,17 @@ export default function Home() {
           <div className="fnl-hero-content">
             <div className="fnl-marquee">
               <h1 id="fnl-hero-title" aria-label="Friday Night Live">
-                <span data-text="FRIDAY" aria-hidden="true">FRIDAY</span>
-                <i className="fnl-title-divider" aria-hidden="true" />
-                <span data-text="NIGHT" aria-hidden="true">NIGHT</span>
-                <i className="fnl-title-divider" aria-hidden="true" />
-                <span data-text="LIVE" aria-hidden="true">LIVE</span>
+                <img
+                  className="fnl-hero-logo"
+                  src={`${basePath}/assets/fnl/hero-logo.webp`}
+                  alt=""
+                  width="910"
+                  height="728"
+                  loading="eager"
+                  decoding="async"
+                  fetchPriority="high"
+                  aria-hidden="true"
+                />
               </h1>
             </div>
 
@@ -314,34 +320,15 @@ export default function Home() {
                 </div>
               </div>
 
-              <div className="fnl-admit-ticket" aria-label="FNL 공연 티켓">
-                <div className="fnl-admit-main">
-                  <span className="fnl-admit-overline">FRIDAY NIGHT LIVE · 2026</span>
-                  <strong className="fnl-admit-title">
-                    <span>FNL</span>
-                    <span>TICKET</span>
-                  </strong>
-                  <dl>
-                    <div>
-                      <dt>DATE</dt>
-                      <dd>12.11</dd>
-                    </div>
-                    <div>
-                      <dt>SHOW</dt>
-                      <dd>{event.start}</dd>
-                    </div>
-                    <div>
-                      <dt>VENUE</dt>
-                      <dd>001 CLUB</dd>
-                    </div>
-                  </dl>
-                </div>
-                <div className="fnl-admit-stub">
-                  <span>ADMIT<br />ONE</span>
-                  <strong>1211</strong>
-                  <small>{event.ticketPrice}</small>
-                </div>
-              </div>
+              <figure className="fnl-admit-ticket">
+                <img
+                  src={`${basePath}/assets/fnl/ticket-final.webp`}
+                  alt={`Friday Night Live 공연 티켓. 2026년 12월 11일, NEW RIVER × 24Hz, ${event.venue}, 오후 7시 30분`}
+                  width="980"
+                  height="287"
+                  decoding="async"
+                />
+              </figure>
             </div>
           </div>
         </section>
