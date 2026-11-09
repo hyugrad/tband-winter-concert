@@ -55,7 +55,7 @@ export const bands = [
     logoWidth: 900,
     logoHeight: 508,
     description:
-      "물결처럼 흐르는 멜로디와 선명한 밴드 사운드를 들려주는 NEW RIVER.",
+      "입사 N년 후, 회사 동기 청첩장 모임에서 대학 시절 취미 이야기를 나누다가 시작된 동기 밴드! 야근과 해외 출장 등 일정 맞추기 어려운 우당탕탕 직장인 밴드지만, 평일 밤 10시에도 합주실로 향할 만큼 열정은 가득한 뉴리버 밴드! 오늘도 정상 영업 합니다.",
     members: [
       { role: "VOCAL", names: "강예진 · 고은산" },
       { role: "GUITAR", names: "신유경", note: "SUB 강예진" },
