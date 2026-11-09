@@ -83,20 +83,11 @@ export default function Home() {
               <h1 id="fnl-hero-title" aria-label="Friday Night Live">
                 <span className="fnl-hero-logo-stack" aria-hidden="true">
                   <img
-                    className="fnl-hero-logo fnl-hero-logo-glow"
-                    src={`${basePath}/assets/fnl/hero-logo.webp`}
-                    alt=""
-                    width="910"
-                    height="728"
-                    loading="eager"
-                    decoding="async"
-                  />
-                  <img
                     className="fnl-hero-logo fnl-hero-logo-main"
-                    src={`${basePath}/assets/fnl/hero-logo.webp`}
+                    src={`${basePath}/assets/fnl/hero-logo-clean.png`}
                     alt=""
-                    width="910"
-                    height="728"
+                    width="1096"
+                    height="1096"
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
