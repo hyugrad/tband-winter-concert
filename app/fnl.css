@@ -191,7 +191,7 @@
 
 .fnl-marquee {
   position: relative;
-  width: min(78vw, 500px);
+  width: min(70vw, 450px);
   padding: 18px 24px;
   filter: drop-shadow(0 26px 28px rgba(0, 0, 0, 0.58));
 }
@@ -220,22 +220,6 @@
   aspect-ratio: 910 / 728;
 }
 
-.fnl-hero-logo-stack::after {
-  position: absolute;
-  z-index: 2;
-  inset: 4%;
-  background: radial-gradient(
-    ellipse at center,
-    rgba(193, 18, 31, 0.82) 0%,
-    rgba(101, 9, 17, 0.62) 58%,
-    transparent 84%
-  );
-  content: "";
-  mix-blend-mode: color;
-  opacity: 0.64;
-  pointer-events: none;
-}
-
 .fnl-hero-logo {
   position: absolute;
   inset: 0;
@@ -247,18 +231,17 @@
 .fnl-hero-logo-main {
   z-index: 1;
   filter:
-    brightness(0.7)
-    saturate(0.72)
-    hue-rotate(-28deg)
-    contrast(1.18)
+    brightness(0.76)
+    saturate(0.82)
+    contrast(1.1)
     drop-shadow(0 8px 12px rgba(0, 0, 0, 0.5))
-    drop-shadow(0 0 18px rgba(193, 18, 31, 0.22));
+    drop-shadow(0 0 16px rgba(231, 173, 87, 0.16));
 }
 
 .fnl-hero-logo-glow {
   z-index: 0;
   transform: scale(1.02);
-  filter: blur(18px) brightness(0.45) saturate(0.6) hue-rotate(-28deg);
+  filter: blur(18px) brightness(0.45) saturate(0.55);
   mix-blend-mode: screen;
   opacity: 0.04;
   animation: fnl-logo-ambient 4.8s 1.8s infinite alternate ease-in-out;
@@ -1081,7 +1064,7 @@
   .fnl-page .scroll-progress { top: 57px; }
   .fnl-hero { min-height: max(100svh, 620px); padding: 78px 16px 72px; }
   .fnl-stage-image { object-position: center center; }
-  .fnl-marquee { width: min(78vw, 390px); padding: 15px 10px; }
+  .fnl-marquee { width: min(70vw, 340px); padding: 15px 10px; }
   .fnl-hero-cast { margin-top: 20px; }
   .fnl-hero-meta { max-width: 320px; }
   .fnl-curtain { width: 57%; }
