@@ -191,7 +191,7 @@
 
 .fnl-marquee {
   position: relative;
-  width: min(82vw, 620px);
+  width: min(78vw, 500px);
   padding: 18px 24px;
   filter: drop-shadow(0 26px 28px rgba(0, 0, 0, 0.58));
 }
@@ -214,13 +214,32 @@
   line-height: 0;
 }
 
-.fnl-hero-logo {
+.fnl-hero-logo-stack {
+  position: relative;
   display: block;
+  aspect-ratio: 621 / 507;
+}
+
+.fnl-hero-logo {
+  position: absolute;
+  inset: 0;
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: contain;
+}
+
+.fnl-hero-logo-main {
   filter:
     drop-shadow(0 8px 12px rgba(0, 0, 0, 0.48))
     drop-shadow(0 0 20px rgba(193, 18, 31, 0.18));
+}
+
+.fnl-hero-logo-glow {
+  transform: scale(1.025);
+  filter: blur(11px) saturate(0.82);
+  mix-blend-mode: screen;
+  opacity: 0.12;
+  animation: fnl-logo-ambient 3.8s 1.6s infinite alternate ease-in-out;
 }
 
 .fnl-hero-cast {
@@ -718,6 +737,7 @@
 }
 
 .fnl-band-logo { width: min(64%, 235px); height: min(78%, 180px); object-fit: contain; filter: grayscale(1) contrast(1.2) brightness(1.25); mix-blend-mode: screen; }
+.fnl-band-logo-new-river { width: min(76%, 320px); height: auto; max-height: 170px; filter: drop-shadow(0 10px 22px rgba(0, 0, 0, 0.28)); mix-blend-mode: normal; }
 .fnl-band-logo-24hz { width: min(42%, 150px); }
 .fnl-band-card-copy { padding: 26px; border-top: 1px solid var(--fnl-line); }
 .fnl-band-card-copy h3 { margin: 0; font-size: clamp(1.8rem, 4vw, 3.4rem); letter-spacing: -0.055em; }
@@ -908,9 +928,9 @@
 .fnl-booking-button:hover { background: transparent; color: var(--fnl-red-dark) !important; }
 
 .fnl-admit-ticket {
-  width: min(100%, 760px);
-  margin: clamp(20px, 3vw, 30px) 0 0 auto;
-  transform: rotate(-1deg);
+  width: min(64%, 440px);
+  margin: -12px 10px 0 auto;
+  transform: rotate(-1.2deg);
   filter:
     drop-shadow(0 0 1px rgba(242, 231, 208, 0.28))
     drop-shadow(10px 16px 24px rgba(4, 0, 0, 0.34));
@@ -1017,6 +1037,11 @@
   to { opacity: 1; transform: translateY(0) scale(1); }
 }
 
+@keyframes fnl-logo-ambient {
+  from { transform: scale(1.015); opacity: 0.08; }
+  to { transform: scale(1.045); opacity: 0.18; }
+}
+
 @keyframes fnl-scroll-cue {
   0% { transform: translateY(0); opacity: 0; }
   22% { opacity: 1; }
@@ -1034,7 +1059,7 @@
   .fnl-page .scroll-progress { top: 57px; }
   .fnl-hero { min-height: max(100svh, 620px); padding: 78px 16px 72px; }
   .fnl-stage-image { object-position: center center; }
-  .fnl-marquee { width: min(88vw, 470px); padding: 15px 10px; }
+  .fnl-marquee { width: min(78vw, 390px); padding: 15px 10px; }
   .fnl-hero-cast { margin-top: 20px; }
   .fnl-hero-meta { max-width: 320px; }
   .fnl-curtain { width: 57%; }
@@ -1077,7 +1102,7 @@
   .fnl-setlist-group li a::after { font-size: 11px; content: "듣기 ↗"; white-space: nowrap; }
   .fnl-ticket-grid { gap: 38px; }
   .fnl-ticket-intro > strong { margin-top: 24px; }
-  .fnl-admit-ticket { width: 100%; margin-top: 18px; transform: rotate(-0.6deg); }
+  .fnl-admit-ticket { width: min(84%, 310px); margin: -8px 6px 0 auto; transform: rotate(-0.8deg); }
   .fnl-venue-grid { gap: 42px; }
   .fnl-venue-actions a { min-height: 52px; font-size: 12px; }
   .fnl-footer { grid-template-columns: 52px 1fr; padding: 32px 18px; }
