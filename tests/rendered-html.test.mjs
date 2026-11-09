@@ -39,7 +39,8 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /assets\/fnl\/stage\.webp/);
   assert.doesNotMatch(html, /assets\/fnl\/city-night\.webp/);
   assert.match(html, /fnl-curtain-left/);
-  assert.match(html, /assets\/fnl\/hero-logo\.webp/);
+  assert.match(html, /assets\/fnl\/hero-logo-red\.webp/);
+  assert.match(html, /assets\/fnl\/hero-logo-yellow\.webp/);
   assert.doesNotMatch(html, /data-text="FRIDAY"|fnl-title-divider/);
   assert.doesNotMatch(html, /ONE NIGHT ONLY · 2026|>PRESENTS<|LIVE MUSIC · SEOUL/);
   assert.match(html, /class="fnl-schedule-board"/);
@@ -47,6 +48,7 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /class="fnl-countdown-day"/);
   assert.doesNotMatch(html, /fnl-2026\.ics/);
   assert.match(html, /assets\/fnl\/logo-red\.webp/);
+  assert.match(html, /assets\/fnl\/newriver-logo\.webp/);
   assert.doesNotMatch(html, /캘린더에 추가|Google Calendar|Apple · 기본 캘린더|Outlook/);
   assert.match(html, /fnl-admit-ticket/);
   assert.match(html, /assets\/fnl\/ticket-final\.webp/);

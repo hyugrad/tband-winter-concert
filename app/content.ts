@@ -51,9 +51,9 @@ export const bands = [
   {
     id: "new-river",
     name: "NEW RIVER",
-    logo: "/assets/logo-new-river.png",
-    logoWidth: 1254,
-    logoHeight: 1254,
+    logo: "/assets/fnl/newriver-logo.webp",
+    logoWidth: 900,
+    logoHeight: 508,
     description:
       "물결처럼 흐르는 멜로디와 선명한 밴드 사운드를 들려주는 NEW RIVER.",
     members: [
