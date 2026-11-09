@@ -101,6 +101,15 @@ export default function Home() {
                     decoding="async"
                     fetchPriority="high"
                   />
+                  <img
+                    className="fnl-hero-logo fnl-hero-logo-tint"
+                    src={`${basePath}/assets/fnl/hero-logo-red.webp`}
+                    alt=""
+                    width="621"
+                    height="507"
+                    loading="eager"
+                    decoding="async"
+                  />
                 </span>
               </h1>
             </div>
