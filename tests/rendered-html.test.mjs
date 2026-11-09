@@ -39,8 +39,8 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /assets\/fnl\/stage\.webp/);
   assert.doesNotMatch(html, /assets\/fnl\/city-night\.webp/);
   assert.match(html, /fnl-curtain-left/);
-  assert.match(html, /assets\/fnl\/hero-logo-red\.webp/);
-  assert.match(html, /assets\/fnl\/hero-logo-yellow\.webp/);
+  assert.match(html, /assets\/fnl\/hero-logo\.webp/);
+  assert.doesNotMatch(html, /assets\/fnl\/hero-logo-(?:red|yellow)\.webp/);
   assert.doesNotMatch(html, /data-text="FRIDAY"|fnl-title-divider/);
   assert.doesNotMatch(html, /ONE NIGHT ONLY · 2026|>PRESENTS<|LIVE MUSIC · SEOUL/);
   assert.match(html, /class="fnl-schedule-board"/);
