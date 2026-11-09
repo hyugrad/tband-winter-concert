@@ -84,31 +84,22 @@ export default function Home() {
                 <span className="fnl-hero-logo-stack" aria-hidden="true">
                   <img
                     className="fnl-hero-logo fnl-hero-logo-glow"
-                    src={`${basePath}/assets/fnl/hero-logo-yellow.webp`}
+                    src={`${basePath}/assets/fnl/hero-logo.webp`}
                     alt=""
-                    width="621"
-                    height="507"
+                    width="910"
+                    height="728"
                     loading="eager"
                     decoding="async"
                   />
                   <img
                     className="fnl-hero-logo fnl-hero-logo-main"
-                    src={`${basePath}/assets/fnl/hero-logo-red.webp`}
+                    src={`${basePath}/assets/fnl/hero-logo.webp`}
                     alt=""
-                    width="621"
-                    height="507"
+                    width="910"
+                    height="728"
                     loading="eager"
                     decoding="async"
                     fetchPriority="high"
-                  />
-                  <img
-                    className="fnl-hero-logo fnl-hero-logo-tint"
-                    src={`${basePath}/assets/fnl/hero-logo-red.webp`}
-                    alt=""
-                    width="621"
-                    height="507"
-                    loading="eager"
-                    decoding="async"
                   />
                 </span>
               </h1>
