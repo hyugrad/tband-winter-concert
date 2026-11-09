@@ -34,7 +34,7 @@ test("server-renders the FNL concert page", async () => {
   assert.doesNotMatch(html, /loading="lazy"/);
   assert.match(html, /<title>FNL — Friday Night Live<\/title>/i);
   assert.match(html, /FRIDAY NIGHT LIVE/);
-  assert.match(html, /property="og:image" content="[^"]*\/og\.png\?v=20261021-fnl-r2"/);
+  assert.match(html, /property="og:image" content="[^"]*\/og-fnl-2026-r3\.png"/);
   assert.match(html, /name="twitter:card" content="summary_large_image"/);
   assert.match(html, /assets\/fnl\/stage\.webp/);
   assert.doesNotMatch(html, /assets\/fnl\/city-night\.webp/);
