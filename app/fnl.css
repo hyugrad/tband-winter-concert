@@ -221,6 +221,23 @@
   animation: fnl-clean-logo-reveal 840ms 920ms both cubic-bezier(0.16, 1, 0.3, 1);
 }
 
+.fnl-hero-logo-stack::before {
+  position: absolute;
+  z-index: 0;
+  inset: 12% 4%;
+  border-radius: 50%;
+  background: radial-gradient(
+    ellipse at center,
+    rgba(242, 231, 208, 0.18) 0%,
+    rgba(212, 151, 121, 0.065) 44%,
+    transparent 74%
+  );
+  content: "";
+  filter: blur(16px);
+  opacity: 0.72;
+  pointer-events: none;
+}
+
 .fnl-hero-logo {
   position: absolute;
   top: 50%;
@@ -234,8 +251,8 @@
 .fnl-hero-logo-main {
   z-index: 1;
   filter:
-    drop-shadow(0 8px 12px rgba(0, 0, 0, 0.5))
-    drop-shadow(0 0 10px rgba(231, 173, 87, 0.12));
+    drop-shadow(0 6px 9px rgba(0, 0, 0, 0.34))
+    drop-shadow(0 0 8px rgba(242, 231, 208, 0.07));
 }
 
 .fnl-hero-cast {
