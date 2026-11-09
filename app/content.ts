@@ -68,9 +68,9 @@ export const bands = [
   {
     id: "24hz",
     name: "24Hz",
-    logo: "/assets/logo-24hz.png",
-    logoWidth: 160,
-    logoHeight: 160,
+    logo: "/assets/logo-24hz-2026.png",
+    logoWidth: 631,
+    logoHeight: 631,
     description:
       "서로 다른 주파수를 한 무대의 에너지로 바꾸는 밴드 24Hz.",
     members: [
