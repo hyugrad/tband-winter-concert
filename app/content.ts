@@ -41,8 +41,7 @@ export const event = {
   address: "서울 마포구 서교동 483-15 지하",
   copyAddress: "서울 마포구 서교동 483-15",
   mapUrl: "https://naver.me/GbyCdfV6",
-  kakaoMapUrl:
-    "https://map.kakao.com/?q=001%ED%81%B4%EB%9F%BD",
+  kakaoMapUrl: "https://place.map.kakao.com/23696074",
   venueGuideUrl: "https://001club.co.kr/",
 };
 
