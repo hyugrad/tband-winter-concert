@@ -130,6 +130,7 @@ test("server-renders the FNL concert page", async () => {
   assert.match(html, /네이버 지도/);
   assert.match(html, /https:\/\/naver\.me\/GbyCdfV6/);
   assert.match(html, />카카오맵</);
+  assert.match(html, /https:\/\/place\.map\.kakao\.com\/23696074/);
   assert.doesNotMatch(html, /장소 안내 보기/);
   assert.doesNotMatch(html, />주소 복사</);
   assert.match(html, /서울 마포구 서교동 483-15 지하/);
