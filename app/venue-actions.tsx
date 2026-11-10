@@ -90,7 +90,7 @@ export function VenueActions({
       <div className="fnl-venue-actions">
         <a href={mapUrl} target="_blank" rel="noreferrer">
           <ActionIcon type="map" />
-          <span>네이버 길찾기</span>
+          <span>네이버 지도</span>
         </a>
         <a href={kakaoMapUrl} target="_blank" rel="noreferrer">
           <ActionIcon type="map" />
